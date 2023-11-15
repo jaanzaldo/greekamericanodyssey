@@ -304,9 +304,14 @@ Before getting on the boat one of the other passengers comes up to you and expla
 &lt;&lt;endif&gt;&gt;
 &lt;&lt;if $check eq 3&gt;&gt;
 A child of the Greek Orthodox Church asks you for a donation, giving him anything may help you in the future.
-&lt;&lt;if $jewelry eq true&gt;&gt;[[Donate your jewelry|boatpass]]&lt;&lt;else&gt;&gt;==Donate your jewelry==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $money eq true&gt;&gt;[[Donate your money|boatpass]]&lt;&lt;else&gt;&gt;==Donate your money==&lt;&lt;endif&gt;&gt;
-[[Don&#39;t donate|boatpass]]
+&lt;&lt;if $jewelry eq true&gt;&gt;[[Donate your jewelry|boatpass]]&lt;&lt;else&gt;&gt;==Donate your jewelry==&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $medicine eq true&gt;&gt;[[Donate your medicine|boatpass]]&lt;&lt;else&gt;&gt;==Donate your medicine==&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $kit eq true&gt;&gt;[[Donate your hygeine kit|boatpass]]&lt;&lt;else&gt;&gt;==Donate your hygeine kit==&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $food eq true&gt;&gt;[[Donate your water|boatpass]]&lt;&lt;else&gt;&gt;==Donate your water==&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $figs eq true&gt;&gt;[[Donate your dried figs|boatpass]]&lt;&lt;else&gt;&gt;==Donate your dried figs==&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $blanket eq true&gt;&gt;[[Donate your blanket|boatpass]]&lt;&lt;else&gt;&gt;==Donate your blanket==&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $toys eq true&gt;&gt;[[Donate your toys|boatpass]]&lt;&lt;else&gt;&gt;==Donate your toys==&lt;&lt;endif&gt;&gt;
 &lt;&lt;endif&gt;&gt;
 &lt;&lt;if $check gt 3&gt;&gt;
 &lt;&lt;if $weight gt 5&gt;&gt;The guard looks at your luggage and frowns. “That trunk is way too big for the ship to accommodate. Sorry mate, but we can’t let you on with all that.” Dejected, you say nothing and prepare to drag the trunk away with you. 
@@ -385,7 +390,7 @@ Your older sister, Lotus. You would never admit to her, but she&#39;s the smarte
 
 &lt;&lt;if $fig eq true&gt;&gt;&lt;&lt;set $fig to false&gt;&gt;&lt;&lt;replacelink &quot;Dried Figs&quot;&gt;&gt;&lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;set $fig to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;Dried Figs (taken)&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;&lt;&lt;/replacelink&gt;&gt;&lt;&lt;endif&gt;&gt;
 
-Once you&#39;ve picked your two items, it&#39;s time to finally [[board the boat.|Day 1]]</tw-passagedata><tw-passagedata pid="40" name="Untitled Passage" tags="" position="575,700" size="100,100">&lt;h1 style=&quot;font-size:85px;&quot;&gt;The Greek American Odyssey&lt;/h1&gt;
+Once you&#39;ve picked your two items, it&#39;s time to finally [[board the boat.|Day 1]]</tw-passagedata><tw-passagedata pid="40" name="Untitled Passage" tags="" position="525,675" size="100,100">&lt;h1 style=&quot;font-size:85px;&quot;&gt;The Greek American Odyssey&lt;/h1&gt;
 &lt;img src=&quot;images/boarding.png&quot; width=&quot;452&quot; height=&quot;322&quot; /&gt;
 &lt;h2&gt;By Jorge Anzaldo, Gabriel Beutel, Marcin Landa, Jason Guo&lt;/h2&gt;
 &lt;h1 style=&quot;font-size:50px;&quot;&gt;[[Start|Intro]]&lt;/h1&gt;</tw-passagedata></tw-storydata>
