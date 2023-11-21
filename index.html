@@ -112,11 +112,13 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*! <<replacelink>> macro set for SugarCube 2.x */
 !function(){"use strict";function showVer(n,notrans){n&&(n.innerHTML="",new Wikifier(n,n.tweecode),n.setAttribute("data-enabled","true"),n.style.display="inline",n.classList.remove("revision-span-out"),notrans||(n.classList.add("revision-span-in"),n.timeout&&clearTimeout(n.timeout),n.timeout=setTimeout(function(){n.classList.remove("revision-span-in"),n=null},20)))}function hideVer(n,notrans){n&&(n.setAttribute("data-enabled","false"),n.classList.remove("revision-span-in"),n.timeout&&clearTimeout(n.timeout),notrans?(n.style.display="none",n.innerHTML="",n=null):(n.classList.add("revision-span-out"),n.timeout=setTimeout(function(){"false"===n.getAttribute("data-enabled")&&(n.classList.remove("revision-span-out"),n.style.display="none",n.innerHTML=""),n=null},1e3)))}function tagcontents(b,starttags,desttags,endtags,k){function tagfound(i,e,endtag){for(var j=0;j<e.length;j++)if(a.indexOf("<<"+e[j]+(endtag?">>":""),i)===i)return e[j]}for(var tg,l=0,c="",a=b.source.slice(k),i=0;i<a.length;i++){if(tg=tagfound(i,starttags))l++;else{if((tg=tagfound(i,desttags,!0))&&0===l)return b.nextMatch=k+i+tg.length+4,[c,tg];if((tg=tagfound(i,endtags,!0))&&(l--,l<0))return null}c+=a.charAt(i)}return null}function revisionSpanHandler(g,e,f,b){function mkspan(vtype){return h=insertElement(m,"span",null,"revision-span "+vtype),h.setAttribute("data-enabled",!1),h.style.display="none",h.tweecode="",h}var becomes,c,cn,m,h,vsn,k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length;if(this.shorthand&&flen)for(;f.length>0;)vsns.push([f.shift(),"insert"===this.flavour?"gains":"becomes"]);else("insert"===this.flavour||"continue"===this.flavour&&"time"===this.trigger)&&vsns.push(["","becomes"]);if("continue"===this.flavour&&flen)b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),vtype]);else{if(becomes=["becomes","gains"],c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k),c&&endtags.indexOf(c[1])===-1){for(;c;)vsns.push(c),c=tagcontents(b,begintags,becomes,endtags,b.nextMatch);c=tagcontents(b,begintags,["/"+e,"end"+e],endtags,b.nextMatch)}if(!c)return void throwError(g,"<<"+e+">>: cannot find a matching close tag");vsns.push(c),"continue"===this.flavour&&(k=b.nextMatch,b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),""]))}for("remove"===this.flavour&&vsns.push(["","becomes"]),cn=0,m=insertElement(g,"span",null,e),m.setAttribute("data-flavour",this.flavour),h=mkspan("initial"),vsn=vsns.shift(),h.tweecode=vsn[0],showVer(h,!0);vsns.length>0;)vsn&&(vtype=vsn[1]),vsn=vsns.shift(),h=mkspan(vtype),h.tweecode=vsn[0];"function"==typeof this.setup&&this.setup(m,g,e,f)}function revisionSetup(m,g,e,f){m.className+=" "+f[0].replace(" ","_")}function keySetup(m,g,e,f){f[0];m.setEventListener("keydown",function l(e){var done=!revise("revise",m);done&&m.removeEventListener("keydown",l)})}function timeSetup(m,g,e,f){function cssTimeUnit(s){if("string"==typeof s){if("ms"===s.slice(-2).toLowerCase())return Number(s.slice(0,-2))||0;if("s"===s.slice(-1).toLowerCase())return 1e3*Number(s.slice(0,-1))||0}return throwError(g,"<<"+e+'>>: "'+s+'" is not a valid CSS time unit'),0}var tm=cssTimeUnit(f[0]),s=passage();setTimeout(function timefn(){if(passage()===s){var done=!revise("revise",m);done||setTimeout(timefn,tm)}},tm)}function hoverSetup(m){var fn,noMouseEnter=null!==document.head.onmouseenter,m1=m.children[0],m2=m.children[1],gains=m2.className.indexOf("gains")>-1;m1&&m2&&(m1.onmouseenter=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp&&"false"!==this.getAttribute("data-enabled")&&revise("revise",this.parentNode)},m2.onmouseleave=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp||"false"!==this.getAttribute("data-enabled")&&revise("revert",this.parentNode)},gains&&(m1.onmouseleave=m2.onmouseleave),noMouseEnter&&(fn=function(n){return function(e){event.relatedTarget&&(event.relatedTarget===this||this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY)||this[n]()}},m1.onmouseover=fn("onmouseenter"),m2.onmouseout=fn("onmouseleave"),gains&&(m1.onmouseout=m2.onmouseout)),m=null)}function mouseSetup(m){var evt=null===document.head.onmouseenter?"onmouseenter":"onmouseover";m[evt]=function(){var done=!revise("revise",this);done&&(this[evt]=null)},m=null}function linkSetup(m,g,e,f){var l=document.createElement("a"),p=m.parentNode;l.className="link-internal replaceLink",p.insertBefore(l,m),l.insertBefore(m,null),jQuery(l).ariaClick(function(){var done=!1;m&&m.parentNode===this&&(done=!revise("revise",m),scrollWindowTo(m)),done&&(this.parentNode.insertBefore(m,this),this.parentNode.removeChild(this))}),l=null}function visitedSetup(m,g,e,f){var done,sav=State.variables,os="once seen",d=m.firstChild&&("insert"===this.flavour?m.firstChild.nextSibling:m.firstChild).tweecode;if(sav[os]=sav[os]||{},d&&!sav[os].hasOwnProperty(d))sav[os][d]=1;else{for(var i=sav[os][d];i>0&&!done;i--)done=!revise("revise",m,!0);sav[os].hasOwnProperty(d)&&(sav[os][d]+=1)}}function insideDepartingSpan(elem){for(var r=elem.parentNode;!r.classList.contains("passage");){if(r.classList.contains("revision-span-out"))return!0;r=r.parentNode}}function reviseAll(rt,rname){for(var rall=document.querySelectorAll(".passage [data-flavour]."+rname),ret=!1,i=0;i<rall.length;i++)insideDepartingSpan(rall[i])||(ret=revise(rt,rall[i])||ret);return ret}function revise(rt,r,notrans){function doToGainerSpans(n,fn){for(var k=n-1;k>=0&&rc[k+1].classList.contains("gains");k--)fn(rc[k],notrans)}for(var ind2,curr,next,ind=-1,rev="revert"===rt,rnd=rt.indexOf("random")>-1,fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc="cycle"===fl,rcl=rc.length-1,k=0;k<=rcl;k++)"true"===rc[k].getAttribute("data-enabled")&&(ind=k);rev&&(ind-=1),curr=ind>=0?rc[ind]:cyc?rc[rcl]:null,ind2=ind,rnd&&(ind2=(ind+Math.floor(Math.random()*rcl))%rcl),next=ind2<rcl?rc[ind2+1]:cyc?rc[0]:null;var docurr=rev?showVer:hideVer,donext=rev?hideVer:showVer,currfn=function(){next&&next.classList.contains("gains")&&!rnd||(docurr(curr,notrans),doToGainerSpans(ind,docurr,notrans))},nextfn=function(){donext(next,notrans),rnd&&doToGainerSpans(ind2+1,donext,notrans)};return rev?(nextfn(),currfn()):(currfn(),nextfn()),!!cyc||(rev?ind>0:ind2<rcl-1)}if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<replacelink>> macro set requires SugarCube 2.0.0 or greater, aborting load");version.extensions.replacelinkMacroSet={major:1,minor:1,revision:7};var begintags=[],endtags=[];[{name:"insertlink",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replacelink",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continuelink",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler,e.shorthand=["link","mouse","hover"].indexOf(e.trigger)>-1,macros[e.name]=e,Macro.tags.register(e.name),begintags.push(e.name),endtags.push("/"+e.name,"end"+e.name)}),macros.revertlink=macros.reviselink=macros.randomiselink=macros.randomizelink={handler:function(a,b,c){function disableLink(l){l.style.display="none"}function enableLink(l){l.style.display="inline"}function updateLink(l){if(l.className.indexOf("random")>-1)return void enableLink(l);for(var cannext,canprev,r,fl,rall=document.querySelectorAll(".passage [data-flavour]."+rname),i=0;i<rall.length;i++)r=rall[i],fl=r.getAttribute("data-flavour"),insideDepartingSpan(r)||("cycle"===fl?cannext=canprev=!0:("false"===r.firstChild.getAttribute("data-enabled")&&(canprev=!0),"false"===r.lastChild.getAttribute("data-enabled")&&(cannext=!0)));var can=l.classList.contains("revert")?canprev:cannext;(can?enableLink:disableLink)(l)}function toggleText(w){w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}if(c.length<2)return void throwError(a,"<<"+b+">>: insufficient arguments (requires at least 2)");var l,rname,actName=b.slice(0,-4),rl="reviseLink",v="",end=!1,out=!1;switch(rname=c.shift().replace(" ","_"),l=insertElement(a,"a"),l.className="link-internal "+rl+" "+rl+"_"+rname+" "+actName,c.length>1&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift()),c[c.length-1]){case"end":end=!0,c.pop();break;case"out":out=!0,c.pop()}for(var h=State.variables,i=0;i<c.length;i++){var on=i===Math.max(c.indexOf(h[v]),0),d=insertElement(null,"span",null,rl+(on?"En":"Dis")+"abled");on?(h[v]=c[i],l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),l.appendChild(d)}jQuery(l).ariaClick(function(){reviseAll(actName,rname);var lall,t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if((end||out)&&u>=m-(end?2:1)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u+1]||t[u]);n.className=rl+"End",n.style.display="inline",this.parentNode.replaceChild(n,this)}else toggleText(t[u]),u=(u+1)%m,v&&(h[v]=c[u]),toggleText(t[u]),this.setAttribute("data-cycle",u);lall=document.getElementsByClassName(rl+"_"+rname);for(var i=0;i<lall.length;i++)updateLink(lall[i])}),disableLink(l),setTimeout(function(l){return function(){updateLink(l)}}(l),1),l=null}},macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["/"+b,"end"+b],evt=null===window.onmouseenter?"onmouseenter":"onmouseover",t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);if(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);"hoverrevise"!=b&&done&&(this[evt]=null)};new Wikifier(h,t[0]),"hoverrevise"===b?(h.onmouseover=f,h.onmouseout=function(){reviseAll("revert",rname)}):h[evt]=f,h=null}}},Macro.tags.register("mouserevise"),Macro.tags.register("hoverrevise"),macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"))}}}();
-</script><tw-passagedata pid="1" name="It&#39;s time to pack" tags="" position="1325,550" size="100,100">&quot;Me and Lotus packed the bare essentials already,&quot; your mother explains. &quot;Bring whatever keepsakes you can carry. If we ever do come back to Greece, it won&#39;t be for a long time.&quot; 
+</script><tw-passagedata pid="1" name="It&#39;s time to pack" tags="" position="1325,550" size="100,100">You&#39;re helping your grandmother entertain Lanthe for a few hours when your mother calls you over to your bedroom.
+
+&quot;Me and Lotus packed the bare essentials already,&quot; your mother explains. &quot;Bring whatever keepsakes you can carry. If we ever do come back to Greece, it won&#39;t be for a long time.&quot; 
 
 First, you need to choose the size of your luggage, You can choose between a knapsack which carries 3 items, a suitcase which carries 5 or a chest which carries 8.
 
-&quot;You might not want to bring too much with you, Bemus,&quot; your mother tells you. &quot;They might not allow large luggage on board, and there&#39;s no way to tell until we get there.&quot;
+&quot;You might not want to bring too much with you, Bemus,&quot; your mother tells you. &quot;They might not allow large luggage on board, and there&#39;s no way to tell until we get there. &quot;
 
 
 &lt;&lt;link [[Knapsack (3 Items) |items]]&gt;&gt;&lt;&lt;set $size to 3&gt;&gt;&lt;&lt;/link&gt;&gt;
@@ -141,18 +143,27 @@ Do you:
 
 &lt;&lt;if $medicine eq true&gt;&gt;&lt;&lt;link [[Use the medicine you packed with you |survive]]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Use the medicine you packed with you==&lt;&lt;endif&gt;&gt;
 &lt;&lt;link [[Ask the nearest adult for help |surviveadult]]&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;&lt;link [[Ignore it and pray it goes away |die]]&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Prelude" tags="" position="1150,575" size="100,100">You hear your mother and your grandmother talking in the distance, you can’t make out much of it other than your grandma saying, “Lanthe and I will stay here, you, Bemus and Lotus should start packing and hop on that boat to America!”. 
-So you start preparing yourself to leave the country to hopefully find a better life in America.
+&lt;&lt;link [[Ignore it and pray it goes away |die]]&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Prelude" tags="" position="1150,575" size="100,100">&quot;Are you done?&quot; Your mother asks. You nod. &quot;Good. I need to talk to your grandmother.&quot;
 
+You hear your mother and your grandmother talking in the living room. You can’t make out much of it other than your grandma saying, “Lanthe and I will stay here, you, Bemus and Lotus should start packing and hop on that boat to America!”. 
 
+You&#39;re not entirely sure how to feel about the news. You feel a mixture of fear and excitement.  Your life as you know it is now over. You&#39;ll have to completely uproot yourself, start over in a new country. Who knows if you will ever see your grandmother or Lanthe again. But maybe life in America will be better. At least you&#39;ll get the chance to see your dad. 
+
+You can hear your mother walking back into the kitchen. &quot;Spend some time with grandma and Lanthe,&quot; she says. &quot;I&#39;ll start packing.&quot;
+	
 [[It&#39;s time to pack]]</tw-passagedata><tw-passagedata pid="4" name="bribefailure" tags="" position="1125,2425" size="100,100">The guard refuses your bribe and kicks you off the boat.
 Looks like you&#39;ll have to take [[the boat coming next month |It&#39;s time to pack]].</tw-passagedata><tw-passagedata pid="5" name="bribepass" tags="" position="900,2450" size="100,100">Looking over his shoulder, the guard quickly takes the jewelry out of your hands and waves you through the door.
 
-[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="6" name="day5" tags="" position="1000,1450" size="100,100">&lt;&lt;if $clothes eq true&gt;&gt;It is much colder than the last few days. You put on the extra set of clothes you brought with you.
-&lt;&lt;else&gt;&gt;It is much colder than the last few days. You regret not taking your extra set of clothes.
+[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="6" name="day5" tags="" position="1000,1450" size="100,100">It is much colder than the last few days. You&#39;re shivering, and you can feel your teeth chattering. And to make it worse, it&#39;s been raining all day. 
+
+As the afternoon progresses, the dampness in the air seeps into your bones. Colder and colder. 
+&lt;&lt;if $clothes eq true&gt;&gt; Fortunately, you had your spare set of clothes you took with you. They offer some comfort, but it&#39;s not enough that you could call yourself warm.
+&lt;&lt;else&gt;&gt;No amount of clothing could offer you respite, but you realize how little you have right now. You regret not bringing your extra set of clothes.
 &lt;&lt;endif&gt;&gt;
 
-As you walk into your communal sleeping area, a 14 year old American kid runs up to you and asks about your clothing but you don&#39;t understand him.
+As you walk into your communal sleeping area, a kid about your age runs up to you and asks about your clothing.
+
+At least, you think they are. &quot;Hey! You [incomprehensible] that [incomprehensible]. [incomprehensible] William. [incomprehensible]?&quot; It&#39;s definitely English, but you don&#39;t know nearly enough to understand what he&#39;s saying. All you do know is that he&#39;s pointing at your clothes with an interested look on his face.
 
 Do you:
 
@@ -247,7 +258,10 @@ As you step forward do you:
 
 [[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="17" name="steal" tags="" position="1275,2075" size="100,100">You wait until no one is looking and swipe the wallet for yourself.
 
-[[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="18" name="Ending" tags="" position="1050,2650" size="100,100">&lt;&lt;if $mom eq &quot;dead&quot;&gt;&gt;
+
+/*sister sees you take it, you&#39;re locked into the church*/
+
+[[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="18" name="Ending" tags="" position="1025,2675" size="100,100">&lt;&lt;if $mom eq &quot;dead&quot;&gt;&gt;
 You and your sister leave the ship and meet your father. You tell him that your mother is dead. He bursts into tears.
 
 Your father had plans to start his own business, but the loss of his wife has dashed them. You end up working in the local market with your sister and father to make ends meet.
@@ -267,11 +281,20 @@ You and the rest of your family meet up with your father. He tells you of his vi
 
 </tw-passagedata><tw-passagedata pid="19" name="Day 7" tags="" position="1150,2025" size="100,100">The boat has finally docked in America, you and your family are heading towards the exit. As you are heading over, a tall, large American man walks by and drops his wallet which visibly contains a large amount of cash, do you:
 
+/* only happens if mom is dead */
 [[Pick it up and give it to him|talk]]
 [[Wait a bit and take it for yourself|steal]]
 [[Leave it alone|leave]]	</tw-passagedata><tw-passagedata pid="20" name="leave" tags="" position="1150,2175" size="100,100">You decide to leave it alone and leave the boat.
 
-[[Leave the boat|final]]</tw-passagedata><tw-passagedata pid="21" name="Beginning" tags="" position="825,575" size="100,100">You hear the front door open. Your mother holding a letter. You ask what the letter is about and she hands it to you. You see on the front that it&#39;s from your father who lives in America and quickly open up the letter. The letter from your dad contains 3 third-class boat tickets, a postcard and a handwritten note.
+[[Leave the boat|final]]</tw-passagedata><tw-passagedata pid="21" name="Beginning" tags="" position="825,575" size="100,100">You are sitting in the kitchen, washing the last of the dirty dishes. It&#39;s quieter outside than normal--the day is cold and ice coats the streets. You hear the front door open.
+
+&quot;Welcome home!&quot; You say to your mother. She puts her bag down and pulls out a letter. She slumps into the chair across from the kitchen table from you. &quot;What&#39;s that?&quot;
+
+She hands you the letter without a word. She rubs her temples, obviously anxious about something. 
+
+&quot;It&#39;s from your dad,&quot; she explains. &quot;Go ahead and read it. You&#39;ll want to be sitting.&quot;
+
+You slide the letter out from its envelope. Three tickets and a postcard also fall into your hand. You glance again at your mother. She sighs and looks out the window.
 
 &lt;img src=&quot;images/dad.png&quot; width=&quot;1170px&quot; height=&quot;473px&quot;  /&gt;
 
@@ -326,9 +349,21 @@ The items you carried with you are bulky enough that you can only fit 2 in your 
 Choose
 &lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="24" name="boatpass" tags="" position="1125,975" size="100,100">You and your family have been allowed entry onto the boat.
 
-[[Continue|Day 1]] </tw-passagedata><tw-passagedata pid="25" name="boatfail" tags="" position="1500,950" size="100,100">Unfortunately, you and your family have been denied entry. You&#39;ll have to try again with the ship coming [[next month.|It&#39;s time to pack]]</tw-passagedata><tw-passagedata pid="26" name="Day 1" tags="" position="1000,900" size="100,100">You get on the ship and head straight to your sleeping area because it is late and you are tired. You, your mother and your sister say a prayer and then you fall asleep.
+[[Continue|Day 1]] </tw-passagedata><tw-passagedata pid="25" name="boatfail" tags="" position="1500,950" size="100,100">Unfortunately, you and your family have been denied entry. You&#39;ll have to try again with the ship coming [[next month.|It&#39;s time to pack]]</tw-passagedata><tw-passagedata pid="26" name="Day 1" tags="" position="1000,900" size="100,100">You spend your first day learning where everything is. Not much of the ship is available to you, as most of it is reserved for the ship&#39;s crew. 
 
-[[Day 2]]</tw-passagedata><tw-passagedata pid="27" name="Day 2" tags="" position="925,1125" size="100,100">You wake up and become curious as to what activities are on board. You ask your sister if she would like to come walk around the ship with you and she says yes. 
+&quot;How long will we be traveling for?&quot; You ask once you reach the communal sleeping area at the end of the day.
+
+&quot;About 10 days&quot;, Lotus replies. &quot;We&#39;re going to be going past Italy, Spain, Portugal, Tunisia, Algeria and Morocco. After that it&#39;s a straight line to the United States.&quot;
+
+Your mother leads you and Lotus in a prayer and then the three of you go to bed. You lie awake for a long time, staring at the ceiling. The reality of your current situation dawns on you. You&#39;re going to be on this boat for a long time. 
+
+[[Day 2]]</tw-passagedata><tw-passagedata pid="27" name="Day 2" tags="" position="925,1125" size="100,100">The first night&#39;s sleep was not a good one. You toss and turn for what seems like hours until suddenly, it&#39;s morning.
+
+&quot;Hey, Bemus,&quot; Lotus says to you. &quot;I&#39;m bored. You&#39;re bored. Let&#39;s go look around.&quot;
+
+&quot;Didn&#39;t we do that yesterday?&quot; You say, rubbing your eyes.
+
+&quot;Maybe they&#39;ll let us see more of the ship if we ask nicely. We&#39;re still kids, after all. They won&#39;t worry about us being in the crew areas. Maybe they&#39;ll worry about us breaking something, sure, but that&#39;d be their fault for letting us in.&quot; She smiles.
 
 You spend the rest of the day wandering around the ship and speaking with other kids you see aboard the ship before you get cold and run back to your sleeping quarters. When you get back you see your mother sleeping, she looks very pale. You decide to let her rest and also go to sleep.
 
@@ -338,6 +373,7 @@ You spend the rest of the day wandering around the ship and speaking with other 
 
 Before you can say anything, your mother volunteers you and Lotus. About 10 people in total decide to help. You spend the day walking around the ship, collecting garbage and sweeping up any trash you find along the way.
 
+/*you choose what to volunteer for, if you choose to cook and have the candy making kit you make candy and earn money*/
 [[Day 5|day5]]</tw-passagedata><tw-passagedata pid="29" name="Day 6" tags="" position="1150,1700" size="100,100">You wake up the next morning to the violent sounds of the ship sailing through a huge storm. The ship often violently rocks and there are an enormous amount of sounds coming from above the ship. You have no choice but to stay in your sleeping quarters.
 
 [[3 days later|Day 9]]</tw-passagedata><tw-passagedata pid="30" name="Intro" tags="" position="575,525" size="100,100">November 17, 1925. Your name is [[Bemus]]. You&#39;re a young boy living in Greece. You are playing around with and taking care of your [[younger sister]] with your [[grandmother]] while your [[mother]] and [[older sister]] are out grabbing the mail from the post office. 
@@ -350,8 +386,10 @@ Images, style
 add gender option (male, female, non-binary), name option (select gender and give a list of &quot;male&quot; and &quot;female&quot; names)
 </tw-passagedata><tw-passagedata pid="33" name="Day 9" tags="" position="1150,1875" size="100,100">The storm lasted for 3 days and nights, you&#39;re walking around with your sister on the 9th day of your trip after the storm and see a huddle of upset Greek parents and children, you can choose to: 
 
-&lt;&lt;if $bible eq true&gt;&gt;[[Show them your Orthodox icon|Day 7]]&lt;&lt;endif&gt;&gt;
-&lt;&lt;if $toys eq true&gt;&gt;[[Let them borrow your toys|Day 7]]&lt;&lt;endif&gt;&gt;
+/*Mom sends you to go connect with the kids*/
+
+&lt;&lt;if $bible eq true&gt;&gt;[[Show them your Orthodox icon|Day 7]]&lt;&lt;else&gt;&gt;==Show them your Orthodox icon==&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $toys eq true&gt;&gt;[[Let them borrow your toys|Day 7]]&lt;&lt;else&gt;&gt;==Let them borrow your toys==&lt;&lt;endif&gt;&gt;
 [[Go to bed|Day 7]]</tw-passagedata><tw-passagedata pid="34" name="Bemus" tags="" position="200,700" size="100,100">&lt;img src=&quot;images/bemus.png&quot; /&gt;
 You just turned 15 a month ago. Ever since your father left to America, you&#39;ve been taken care of by your mother and grandmother. 
 
@@ -359,7 +397,7 @@ You just turned 15 a month ago. Ever since your father left to America, you&#39;
 Your younger sister, Lanthe. She&#39;s very shy, and doesn&#39;t seem to talk to anyone aside from your grandmother.
 
 [[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="36" name="grandmother" tags="" position="200,500" size="100,100">&lt;img src=&quot;images/agata.png&quot; /&gt;
-Your dear grandmother., Agata She&#39;s been helping take care of your ever since your father left to work in America.
+Your dear grandmother.  Agata She&#39;s been helping take care of your ever since your father left to work in America.
 
 [[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="37" name="mother" tags="" position="200,400" size="100,100">&lt;img src=&quot;images/nora.png&quot; /&gt;
 
