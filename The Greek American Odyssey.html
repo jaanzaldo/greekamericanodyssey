@@ -197,7 +197,7 @@ After all your trouble, it looks like you&#39;re on your way back to where you s
 
 </tw-passagedata><tw-passagedata pid="9" name="friend" tags="" position="1325,1525" size="100,100">You head to the spare room with William and meet his friends. Lotus helps translate when you need to and you have a great time. They even try to teach you some English, though you don&#39;t really feel like you learned much. 
 
-&quot;Your name was Bemus, right?&quot; William asks as you turn to leave. &lt;&lt;if $mom eq &quot;live&quot;&gt;&gt;&quot;Hey, let&#39;s try and play again some time.&quot;&lt;&lt;else&gt;&gt;&quot;I heard about what happened with your mom. I&#39;m so sorry. Hopefully we were able to take your mind off things for a while. Feel free to come play with us again, if you want.&quot;&lt;&lt;endif&gt;&gt;
+&quot;Your name was Bemus, right?&quot; William asks as you turn to leave. &quot;Hey, let&#39;s try and play again some time.&quot;
 
 [[Go back to your family and sleep |Day 6]]</tw-passagedata><tw-passagedata pid="10" name="items" tags="" position="1525,575" size="100,100">Choose what you want. Remember, you can only take $size items. Once you make a choice, it&#39;s permanent, so choose wisely.
 &lt;&lt;set $weight to 0&gt;&gt;
@@ -299,29 +299,15 @@ Begrudgingly, you walk towards the man and get his attention. &quot;I&#39;m sorr
 The man is obviously upset, but he appreciates that you&#39;re giving it back. He sighs to himself and shakes his head. &quot;I admire your honesty, kid. It&#39;s a good trait. I&#39;m assuming someone told you to give this back to me?&quot; You nod your head. &quot;Well, I hope you&#39;ve learned your lesson. You&#39;re lucky I&#39;m nice. You try that again, you might upset the wrong person. Then you&#39;ll //really// regret it.&quot;
 &lt;&lt;set $church to true&gt;&gt;
 [[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="18" name="Ending" tags="" position="1025,2675" size="100,100">&lt;&lt;if $mom eq &quot;dead&quot;&gt;&gt;
-You and your sister exit the ship and see your father eagerly waiting. He spots you and starts running over.
-
-&quot;Bemus! Lotus! I&#39;m so glad you&#39;re here!&quot; He hugs you tightly. &quot;Where&#39;s your mother? I figured she would be with you.&quot;
-
-Oh, no. You didn&#39;t even think about having to break the news to your father. Lotus explains what happened. You&#39;ve never heard someone cry as hard as your father did.
+You and your sister leave the ship and meet your father. You tell him that your mother is dead. He bursts into tears.
 
 Your father had plans to start his own business, but the loss of his wife has dashed them. You end up working in the local market with your sister and father to make ends meet.
-
-&lt;&lt;if $makefriend eq true&gt;&gt;Occasionally, you see William around town. Coincidentally, his father lives in Chicago as well. You don&#39;t talk to him often, but he and his family did come to your mother&#39;s memorial service.&lt;&lt;else&gt;&gt;Occasionaly, you see that kid who tried to talk to you on the boat. Apparently he lives in Chicago as well. You never talk to him.&lt;&lt;endif&gt;&gt;
-
-&lt;&lt;if $church eq true&gt;&gt;After the wallet incident on the boat, Lotus has been watching you constantly. You can tell she doesn&#39;t really trust you anymore. Thankfully, she never told your father. Lotus spends some of her free time volunteering at the church, and she makes you come with every time. &quot;Hopefully all this volunteer work will make you a better person,&quot; she says, still disappointed in you.&lt;&lt;endif&gt;&gt;
-
-&lt;&lt;if $railroad eq true&gt;&gt;Your life is going nowhere. Your father never got over your mother&#39;s death. You&#39;ve been working at this store with your father for a few years now. You decide to pull out that old business card you got from the railroad worker and give him a call.
-
-&quot;Hello? This is the kid who stole your wallet. I think I&#39;d like the job.&quot;&lt;&lt;endif&gt;&gt;
+&lt;&lt;elseif $makefriend eq true&gt;&gt;
+You and the rest of your family meet up with your father. He tells you of his vision of starting a family business, and you invite your new friend William and his family to help make it a reality. 
 &lt;&lt;elseif $mom eq &quot;live&quot;&gt;&gt;
-You, Lotus, and your mother exit the ship and see your father eagerly waiting. He spots you and starts running over.
-
-&quot;I&#39;m so glad you made it!&quot; The four of you embrace. &quot;Welcome to America! You&#39;re going to love it here.&quot;
-
-With your father already having a steady job at the local market, you and your sister decide to get jobs there as well to support the family. Every day, he tells you about his dreams of owning his own store. Meanwhile, your mother volunteers at the local church.&lt;&lt;if $church eq true&gt;&gt; After the wallet incident, your mother has never looked at you the same. She hasn&#39;t told your father, thank God, but she&#39;s made you spend your time volunteering with her.&lt;&lt;endif&gt;&gt;
-
-&lt;&lt;if $makefriend eq true&gt;&gt;Occasionally, you see William around town. Coincidentally, his father lives in Chicago as well. You make an effort to see him at least once a week. While you and William are off together, his father talks to yours. It turns out his father is fairly wealthy. Considering that you treated his son well on the ride here, his father listens to your dad&#39;s business plans more intently than you ever did. The two of them actually decide to make it happen, and what better employees than their own children?&lt;&lt;endif&gt;&gt;
+You and your family make it off the boat and meet up with your father. With your father already having a steady job at the local market, you and your sister decide to get jobs there as well to support the family. Meanwhile, your mother helps to establish a Greek Orthodox Church in your town.
+&lt;&lt;elseif $railroad eq true&gt;&gt;
+You and the rest of your family meet up with your father. He tells you of his vision of starting a family business, but you have other plans. You&#39;ve decided to join the railroad industry. You work in your father&#39;s business until you&#39;re old enough, then leave to pursue your newfound dream.
 &lt;&lt;endif&gt;&gt;
 
 [[Start Over from the title screen?|Untitled Passage]]
