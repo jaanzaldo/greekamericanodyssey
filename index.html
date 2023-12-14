@@ -363,8 +363,9 @@ Before getting on the boat, one of the other passengers comes up to you.
 &lt;&lt;if $food eq true&gt;&gt;&lt;&lt;link [[Donate your water|Day 1]]&gt;&gt;&lt;&lt;set $food to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your water==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $figs eq true&gt;&gt;&lt;&lt;link [[Donate your dried figs|Day 1]]&gt;&gt;&lt;&lt;set $figs to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your dried figs==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $blanket eq true&gt;&gt;&lt;&lt;link [[Donate your blanket|Day 1]]&gt;&gt;&lt;&lt;set $blanket to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your blanket==&lt;&lt;endif&gt;&gt;
-&lt;&lt;if $money eq true&gt;&gt;&lt;&lt;link [[Donate your money|Day 1]]&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your money==&lt;&lt;endif&gt;&gt;&lt;&lt;endif&gt;&gt;
-[[Don&#39;t give anything|Day 1]]&lt;&lt;if $check eq 2&gt;&gt;
+&lt;&lt;if $money eq true&gt;&gt;&lt;&lt;link [[Donate your money|Day 1]]&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your money==&lt;&lt;endif&gt;&gt;
+[[Don&#39;t give anything|Day 1]]&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $check eq 2&gt;&gt;
 Near the boat&#39;s entrance, you can see a booth set up. It&#39;s from a local charity.
 
 &quot;Anything you can spare!&quot;
@@ -375,9 +376,9 @@ Near the boat&#39;s entrance, you can see a booth set up. It&#39;s from a local 
 &lt;&lt;if $figs eq true&gt;&gt;&lt;&lt;link [[Donate your dried figs|Day 1]]&gt;&gt;&lt;&lt;set $figs to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your dried figs==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $blanket eq true&gt;&gt;&lt;&lt;link [[Donate your blanket|Day 1]]&gt;&gt;&lt;&lt;set $blanket to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your blanket==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $toys eq true&gt;&gt;&lt;&lt;link [[Donate your toys|Day 1]]&gt;&gt;&lt;&lt;set $toys to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your toys==&lt;&lt;endif&gt;&gt;
-&lt;&lt;if $money eq true&gt;&gt;&lt;&lt;link [[Donate your money|Day 1]]&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your money==&lt;&lt;endif&gt;&gt;&lt;&lt;endif&gt;&gt;
-[[Don&#39;t donate|Day 1]]
-&lt;&lt;endif&gt;&gt;&lt;&lt;if $check eq 3&gt;&gt;
+&lt;&lt;if $money eq true&gt;&gt;&lt;&lt;link [[Donate your money|Day 1]]&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your money==&lt;&lt;endif&gt;&gt;
+[[Don&#39;t donate|Day 1]]&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $check eq 3&gt;&gt;
 Before getting on the boat, one of the other passengers comes up to you.
 
 &quot;Please, help me. I&#39;m boarding with nothing. The guards refused to let my luggage on board because it was too big. Please, if you could spare anything at all, I would be so grateful.&quot;
@@ -388,7 +389,7 @@ Before getting on the boat, one of the other passengers comes up to you.
 &lt;&lt;if $figs eq true&gt;&gt;&lt;&lt;link [[Donate your dried figs|Day 1]]&gt;&gt;&lt;&lt;set $figs to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your dried figs==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $blanket eq true&gt;&gt;&lt;&lt;link [[Donate your blanket|Day 1]]&gt;&gt;&lt;&lt;set $blanket to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your blanket==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $toys eq true&gt;&gt;&lt;&lt;link [[Donate your toys|Day 1]]&gt;&gt;&lt;&lt;set $toys to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your toys==&lt;&lt;endif&gt;&gt;
-&lt;&lt;if $money eq true&gt;&gt;&lt;&lt;link [[Donate your money|Day 1]]&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your money==&lt;&lt;endif&gt;&gt;&lt;&lt;endif&gt;&gt;
+&lt;&lt;if $money eq true&gt;&gt;&lt;&lt;link [[Donate your money|Day 1]]&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Donate your money==&lt;&lt;endif&gt;&gt;
 [[Don&#39;t donate|Day 1]]
 &lt;&lt;endif&gt;&gt;&lt;&lt;if $check gt 3&gt;&gt;
 &lt;&lt;if $weight gt 5&gt;&gt;The guard looks at your luggage and frowns. “That trunk is way too big for the ship to accommodate. Sorry mate, but we can’t let you on with all that.” Dejected, you say nothing and prepare to drag the trunk away with you. 
