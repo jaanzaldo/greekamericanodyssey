@@ -438,6 +438,8 @@ You spend the day walking around the ship, collecting garbage and sweeping up an
 
 Your name is [[Nikos|Bemus]]. You&#39;re a young boy living in Greece. You are playing around with your [[younger sister]] with your [[grandmother]] while your [[mother]] and [[older sister]] are out grabbing the mail from the post office. 
 
+&lt;img src=&quot;images/house.png&quot; width=&quot;510px&quot; height=&quot;324px&quot;/&gt;
+
 [[Next|Beginning]]</tw-passagedata><tw-passagedata pid="30" name="leave for the boat" tags="" position="1525,725" size="100,100">You&#39;ve brought all you can carry. You take one last look at your bedroom and sigh. 
 //I&#39;ll never sleep in this room again...//
 
@@ -570,15 +572,15 @@ Your older sister, Anna. You would never admit it to her, but she&#39;s the smar
 Once you&#39;ve picked your two items, it&#39;s time to finally [[board the boat.|Day 1]]</tw-passagedata><tw-passagedata pid="39" name="Untitled Passage" tags="" position="525,675" size="100,100">&lt;h1 style=&quot;font-size:75px;&quot;&gt;The Greek American Odyssey&lt;/h1&gt;
 &lt;img src=&quot;images/boarding.png&quot; width=&quot;430&quot; height=&quot;300&quot; /&gt;
 &lt;h3&gt;The National Hellenic Museum&lt;/h3&gt;
-&lt;h3 style=&quot;font-size:30px;&quot;&gt;[[Start|Intro]]&lt;/h3&gt;</tw-passagedata><tw-passagedata pid="40" name="Medicine Details" tags="" position="1000,400" size="100,100">&lt;img src=&quot;images/medicine.png&quot; /&gt;
+&lt;h3 style=&quot;font-size:30px;&quot;&gt;[[Start|Intro]]&lt;/h3&gt;</tw-passagedata><tw-passagedata pid="40" name="Medicine Details" tags="" position="1000,400" size="100,100">&lt;img src=&quot;images/medicine.png&quot; width=&quot;512px&quot; height=&quot;768px&quot; /&gt;
 Who knows what kind of diseases you might find on board. Hopefully this medicine will do the job if necessary.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $medicine to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="41" name="Toy Details" tags="" position="1100,400" size="100,100">&lt;img src=&quot;images/toy.png&quot; /&gt;
-Your model train, a stuffed animal, and a bag of marbles. You&#39;ll be on this boat for a long time, and you have no idea how you&#39;re going to entertain yourself. Maybe bringing a few toys will help kill time.
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="41" name="Toy Details" tags="" position="1100,400" size="100,100">&lt;img src=&quot;images/toy.png&quot; width=&quot;504px&quot; height=&quot;672px&quot; /&gt;
+This is just about the only toy you own. You&#39;ll be on this boat for a long time, and you have no idea how you&#39;re going to entertain yourself. Maybe this will help kill time.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take them with you|items]]&gt;&gt;&lt;&lt;set $toys to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave them behind|items]]</tw-passagedata><tw-passagedata pid="42" name="Money Details" tags="" position="1200,400" size="100,100">&lt;img src=&quot;images/money.png&quot; /&gt;
+[[Leave them behind|items]]</tw-passagedata><tw-passagedata pid="42" name="Money Details" tags="" position="1200,400" size="100,100">&lt;img src=&quot;images/money.png&quot; width=&quot;572px&quot; height=&quot;260px&quot; /&gt;
 100 Greek Drachma, the last of your savings. Unfortunately, you don&#39;t know the conversion rate to United States Dollars. Hopefully it&#39;ll be enough. You might still have a use for it before you reach America, though.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $money to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
@@ -586,31 +588,31 @@ Your model train, a stuffed animal, and a bag of marbles. You&#39;ll be on this 
 Handmade by your grandmother. A trip across the sea is guaranteed to get cold. Having blankets on hand may help you feel more comfortable.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $blanket to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="44" name="Passport Details" tags="" position="1400,400" size="100,100">&lt;img src=&quot;images/passport.png&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="44" name="Passport Details" tags="" position="1400,400" size="100,100">&lt;img src=&quot;images/passport.png&quot; width=&quot;252px&quot; height=&quot;413px&quot;/&gt;
 It&#39;s a way of identifying yourself. Your father didn’t have one when he went to America, but times have changed since then and you may need it for what&#39;s to come.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $passport to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="45" name="Water Details" tags="" position="1500,400" size="100,100">&lt;img src=&quot;images/water.png&quot; /&gt;
-As a human being, you need to eat and drink to survive. Bringing this along may make the long trip more bearable.
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="45" name="Water Details" tags="" position="1500,400" size="100,100">&lt;img src=&quot;images/water.png&quot; width=&quot;367px&quot; height=&quot;489px&quot; /&gt;
+A spare canteen of water. Who knows how the water on board the ship will taste. Bringing this along may make the long trip more bearable.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $food to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
 [[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="46" name="Clothing Details" tags="" position="1600,400" size="100,100">&lt;img src=&quot;images/clothing.png&quot; /&gt;
 While it doesn’t seem like much, it represents the culture you came from. Besides, it might be a good idea to bring some extra layers.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $clothes to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="47" name="Kit Details" tags="" position="1700,400" size="100,100">&lt;img src=&quot;images/kit.png&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="47" name="Kit Details" tags="" position="1700,400" size="100,100">&lt;img src=&quot;images/kit.png&quot; width=&quot;512px&quot; height=&quot;768px&quot; /&gt;
 Soap and a toothbrush. You&#39;re going to be on this boat for a while. Keeping yourself clean seems like a good idea.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $kit to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="48" name="Icon Details" tags="" position="1800,400" size="100,100">&lt;img src=&quot;images/icon.png&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="48" name="Icon Details" tags="" position="1800,400" size="100,100">&lt;img src=&quot;images/icon.png&quot; width=&quot;620px&quot; height=&quot;755px&quot; /&gt;
 As devout followers of the Church, your parents always made you carry a small icon on you. You ask yourself what kind of God would force you to abandon your life like this.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $bible to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="49" name="Jewelry Details" tags="" position="1900,400" size="100,100">&lt;img src=&quot;images/jewelry.png&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="49" name="Jewelry Details" tags="" position="1900,400" size="100,100">&lt;img src=&quot;images/jewelry.png&quot; width=&quot;768px&quot; height=&quot;512px&quot;/&gt;
 Your mother&#39;s jewelry box. A longtime family heirloom passed down to you. It’s not much, but it’s valuable enough that you could probably pawn it off to make some quick cash.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $jewelry to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="50" name="Candy Details" tags="" position="2000,400" size="100,100">&lt;img src=&quot;images/candy.png&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="50" name="Candy Details" tags="" position="2000,400" size="100,100">&lt;img src=&quot;images/candy.png&quot; width=&quot;672px&quot; height=&quot;504px&quot; /&gt;
 Your father was a skilled candymaker in your hometown. He left his candy crafting machines back home, so maybe he would want them brought over.
 
 &lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $candy to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;
