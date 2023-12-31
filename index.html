@@ -99,8 +99,16 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
 	<tw-storydata name="The Greek American Odyssey 2" startnode="39" creator="Twine" creator-version="2.7.1" format="SugarCube" format-version="2.36.1" ifid="BC1DD935-2992-411D-AF51-9D1062C6CD7F" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">body {
-	font-family: Helvetica Now Display, Helvetica, Arial, sans-serif; 
+	font-family: Helvetica Now Display, Helvetica, Arial, sans-serif;
 }
+img {
+    display:block;
+    margin:auto;
+}
+#ui-bar {
+	display: none;
+}
+
 /*! <<replacelink>> macro set for SugarCube 2.x */
 .revision-span-in {
 	opacity: 0;
@@ -527,10 +535,9 @@ Your older sister, Anna. You would never admit it to her, but she&#39;s the smar
 &lt;&lt;if $fig eq true&gt;&gt;&lt;&lt;set $fig to false&gt;&gt;&lt;&lt;replacelink &quot;Dried Figs&quot;&gt;&gt;&lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;set $fig to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;Dried Figs (taken)&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;&lt;&lt;/replacelink&gt;&gt;&lt;&lt;endif&gt;&gt;
 
 Once you&#39;ve picked your two items, it&#39;s time to finally [[board the boat.|Day 1]]</tw-passagedata><tw-passagedata pid="39" name="Untitled Passage" tags="" position="425,675" size="100,100">&lt;h1 style=&quot;font-size:75px;&quot;&gt;The Greek American Odyssey&lt;/h1&gt;
-&lt;img src=&quot;images/boarding.png&quot; width=&quot;430&quot; height=&quot;300&quot; /&gt;
-&lt;h3&gt;The National Hellenic Museum&lt;/h3&gt;
-&lt;h3 style=&quot;font-size:30px;&quot;&gt;&lt;&lt;link [[Start (With Sound)|Intro]]&gt;&gt;&lt;&lt;set $sound to true&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/h3&gt;
-&lt;h3 style=&quot;font-size:30px;&quot;&gt;[[Start (Without Sound)|Intro]]&lt;/h3&gt;
+&lt;img src=&quot;images/museumlogo.jpg&quot; width=&quot;387&quot; height=&quot;452&quot; /&gt;
+&lt;h3 style=&quot;font-size:30px;&quot;&gt;&lt;&lt;link [[Start (With Music)|Intro]]&gt;&gt;&lt;&lt;set $sound to true&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/h3&gt;
+&lt;h3 style=&quot;font-size:30px;&quot;&gt;[[Start (Without Music)|Intro]]&lt;/h3&gt;
 </tw-passagedata><tw-passagedata pid="40" name="Medicine Details" tags="" position="1000,400" size="100,100">&lt;img src=&quot;images/medicine.png&quot; width=&quot;252px&quot; height=&quot;530px&quot; /&gt;
 Who knows what kind of diseases you might find on board. Hopefully this medicine will do the job if necessary.
 
