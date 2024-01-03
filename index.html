@@ -101,29 +101,14 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	<tw-storydata name="The Greek American Odyssey 2" startnode="39" creator="Twine" creator-version="2.7.1" format="SugarCube" format-version="2.36.1" ifid="BC1DD935-2992-411D-AF51-9D1062C6CD7F" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">#ui-bar {
 	display: none;
 }
-@font-face {
-    font-family: Nimbus;
-    src: url("fonts/NimbusSanL-Reg.otf") format("opentype");
-}
-
-@font-face {
-    font-family: Nimbus;
-    font-weight: bold;
-    src: url("fonts/NimbusSanL-Bol.otf") format("opentype");
-}
 
 h1 {
    text-align: center;
-   margin-bottom: -25px;
 }
 h3 {
    text-align: center;
    margin-bottom: -25px;
 
-}
-#credits {
-   text-align: left;
-   margin-bottom: -50px;
 }
 #title {
   display:block;
@@ -132,7 +117,7 @@ h3 {
 }
 
 body {
-	font-family: Nimbus, Helvetica Now Display, Helvetica, Arial, sans-serif;
+	font-family: Nimbus Sans L, Helvetica Now Display, Helvetica, Arial, sans-serif;
     margin-left: -3.5em;
     margin-top: -25px;
 }
@@ -150,11 +135,11 @@ body {
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript">/*! <<replacelink>> macro set for SugarCube 2.x */
 !function(){"use strict";function showVer(n,notrans){n&&(n.innerHTML="",new Wikifier(n,n.tweecode),n.setAttribute("data-enabled","true"),n.style.display="inline",n.classList.remove("revision-span-out"),notrans||(n.classList.add("revision-span-in"),n.timeout&&clearTimeout(n.timeout),n.timeout=setTimeout(function(){n.classList.remove("revision-span-in"),n=null},20)))}function hideVer(n,notrans){n&&(n.setAttribute("data-enabled","false"),n.classList.remove("revision-span-in"),n.timeout&&clearTimeout(n.timeout),notrans?(n.style.display="none",n.innerHTML="",n=null):(n.classList.add("revision-span-out"),n.timeout=setTimeout(function(){"false"===n.getAttribute("data-enabled")&&(n.classList.remove("revision-span-out"),n.style.display="none",n.innerHTML=""),n=null},1e3)))}function tagcontents(b,starttags,desttags,endtags,k){function tagfound(i,e,endtag){for(var j=0;j<e.length;j++)if(a.indexOf("<<"+e[j]+(endtag?">>":""),i)===i)return e[j]}for(var tg,l=0,c="",a=b.source.slice(k),i=0;i<a.length;i++){if(tg=tagfound(i,starttags))l++;else{if((tg=tagfound(i,desttags,!0))&&0===l)return b.nextMatch=k+i+tg.length+4,[c,tg];if((tg=tagfound(i,endtags,!0))&&(l--,l<0))return null}c+=a.charAt(i)}return null}function revisionSpanHandler(g,e,f,b){function mkspan(vtype){return h=insertElement(m,"span",null,"revision-span "+vtype),h.setAttribute("data-enabled",!1),h.style.display="none",h.tweecode="",h}var becomes,c,cn,m,h,vsn,k=b.source.indexOf(">>",b.matchStart)+2,vsns=[],vtype=e,flen=f.length;if(this.shorthand&&flen)for(;f.length>0;)vsns.push([f.shift(),"insert"===this.flavour?"gains":"becomes"]);else("insert"===this.flavour||"continue"===this.flavour&&"time"===this.trigger)&&vsns.push(["","becomes"]);if("continue"===this.flavour&&flen)b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),vtype]);else{if(becomes=["becomes","gains"],c=tagcontents(b,begintags,becomes.concat(endtags),endtags,k),c&&endtags.indexOf(c[1])===-1){for(;c;)vsns.push(c),c=tagcontents(b,begintags,becomes,endtags,b.nextMatch);c=tagcontents(b,begintags,["/"+e,"end"+e],endtags,b.nextMatch)}if(!c)return void throwError(g,"<<"+e+">>: cannot find a matching close tag");vsns.push(c),"continue"===this.flavour&&(k=b.nextMatch,b.nextMatch=k+b.source.slice(k).length,vsns.push([b.source.slice(k),""]))}for("remove"===this.flavour&&vsns.push(["","becomes"]),cn=0,m=insertElement(g,"span",null,e),m.setAttribute("data-flavour",this.flavour),h=mkspan("initial"),vsn=vsns.shift(),h.tweecode=vsn[0],showVer(h,!0);vsns.length>0;)vsn&&(vtype=vsn[1]),vsn=vsns.shift(),h=mkspan(vtype),h.tweecode=vsn[0];"function"==typeof this.setup&&this.setup(m,g,e,f)}function revisionSetup(m,g,e,f){m.className+=" "+f[0].replace(" ","_")}function keySetup(m,g,e,f){f[0];m.setEventListener("keydown",function l(e){var done=!revise("revise",m);done&&m.removeEventListener("keydown",l)})}function timeSetup(m,g,e,f){function cssTimeUnit(s){if("string"==typeof s){if("ms"===s.slice(-2).toLowerCase())return Number(s.slice(0,-2))||0;if("s"===s.slice(-1).toLowerCase())return 1e3*Number(s.slice(0,-1))||0}return throwError(g,"<<"+e+'>>: "'+s+'" is not a valid CSS time unit'),0}var tm=cssTimeUnit(f[0]),s=passage();setTimeout(function timefn(){if(passage()===s){var done=!revise("revise",m);done||setTimeout(timefn,tm)}},tm)}function hoverSetup(m){var fn,noMouseEnter=null!==document.head.onmouseenter,m1=m.children[0],m2=m.children[1],gains=m2.className.indexOf("gains")>-1;m1&&m2&&(m1.onmouseenter=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp&&"false"!==this.getAttribute("data-enabled")&&revise("revise",this.parentNode)},m2.onmouseleave=function(e){for(var efp=document.elementFromPoint(e.clientX,e.clientY);efp&&efp!==this;)efp=efp.parentNode;efp||"false"!==this.getAttribute("data-enabled")&&revise("revert",this.parentNode)},gains&&(m1.onmouseleave=m2.onmouseleave),noMouseEnter&&(fn=function(n){return function(e){event.relatedTarget&&(event.relatedTarget===this||this.compareDocumentPosition(event.relatedTarget)&Node.DOCUMENT_POSITION_CONTAINED_BY)||this[n]()}},m1.onmouseover=fn("onmouseenter"),m2.onmouseout=fn("onmouseleave"),gains&&(m1.onmouseout=m2.onmouseout)),m=null)}function mouseSetup(m){var evt=null===document.head.onmouseenter?"onmouseenter":"onmouseover";m[evt]=function(){var done=!revise("revise",this);done&&(this[evt]=null)},m=null}function linkSetup(m,g,e,f){var l=document.createElement("a"),p=m.parentNode;l.className="link-internal replaceLink",p.insertBefore(l,m),l.insertBefore(m,null),jQuery(l).ariaClick(function(){var done=!1;m&&m.parentNode===this&&(done=!revise("revise",m),scrollWindowTo(m)),done&&(this.parentNode.insertBefore(m,this),this.parentNode.removeChild(this))}),l=null}function visitedSetup(m,g,e,f){var done,sav=State.variables,os="once seen",d=m.firstChild&&("insert"===this.flavour?m.firstChild.nextSibling:m.firstChild).tweecode;if(sav[os]=sav[os]||{},d&&!sav[os].hasOwnProperty(d))sav[os][d]=1;else{for(var i=sav[os][d];i>0&&!done;i--)done=!revise("revise",m,!0);sav[os].hasOwnProperty(d)&&(sav[os][d]+=1)}}function insideDepartingSpan(elem){for(var r=elem.parentNode;!r.classList.contains("passage");){if(r.classList.contains("revision-span-out"))return!0;r=r.parentNode}}function reviseAll(rt,rname){for(var rall=document.querySelectorAll(".passage [data-flavour]."+rname),ret=!1,i=0;i<rall.length;i++)insideDepartingSpan(rall[i])||(ret=revise(rt,rall[i])||ret);return ret}function revise(rt,r,notrans){function doToGainerSpans(n,fn){for(var k=n-1;k>=0&&rc[k+1].classList.contains("gains");k--)fn(rc[k],notrans)}for(var ind2,curr,next,ind=-1,rev="revert"===rt,rnd=rt.indexOf("random")>-1,fl=r.getAttribute("data-flavour"),rc=r.childNodes,cyc="cycle"===fl,rcl=rc.length-1,k=0;k<=rcl;k++)"true"===rc[k].getAttribute("data-enabled")&&(ind=k);rev&&(ind-=1),curr=ind>=0?rc[ind]:cyc?rc[rcl]:null,ind2=ind,rnd&&(ind2=(ind+Math.floor(Math.random()*rcl))%rcl),next=ind2<rcl?rc[ind2+1]:cyc?rc[0]:null;var docurr=rev?showVer:hideVer,donext=rev?hideVer:showVer,currfn=function(){next&&next.classList.contains("gains")&&!rnd||(docurr(curr,notrans),doToGainerSpans(ind,docurr,notrans))},nextfn=function(){donext(next,notrans),rnd&&doToGainerSpans(ind2+1,donext,notrans)};return rev?(nextfn(),currfn()):(currfn(),nextfn()),!!cyc||(rev?ind>0:ind2<rcl-1)}if("undefined"==typeof version||"undefined"==typeof version.title||"SugarCube"!==version.title||"undefined"==typeof version.major||version.major<2)throw new Error("<<replacelink>> macro set requires SugarCube 2.0.0 or greater, aborting load");version.extensions.replacelinkMacroSet={major:1,minor:1,revision:7};var begintags=[],endtags=[];[{name:"insertlink",flavour:"insert",trigger:"link",setup:linkSetup},{name:"timedinsert",flavour:"insert",trigger:"time",setup:timeSetup},{name:"insertion",flavour:"insert",trigger:"revisemacro",setup:revisionSetup},{name:"later",flavour:"insert",trigger:"visited",setup:visitedSetup},{name:"keyinsert",flavour:"insert",trigger:"key",setup:keySetup},{name:"replacelink",flavour:"replace",trigger:"link",setup:linkSetup},{name:"timedreplace",flavour:"replace",trigger:"time",setup:timeSetup},{name:"mousereplace",flavour:"replace",trigger:"mouse",setup:mouseSetup},{name:"hoverreplace",flavour:"replace",trigger:"hover",setup:hoverSetup},{name:"revision",flavour:"replace",trigger:"revisemacro",setup:revisionSetup},{name:"keyreplace",flavour:"replace",trigger:"key",setup:keySetup},{name:"timedremove",flavour:"remove",trigger:"time",setup:timeSetup},{name:"mouseremove",flavour:"remove",trigger:"mouse",setup:mouseSetup},{name:"hoverremove",flavour:"remove",trigger:"hover",setup:hoverSetup},{name:"removal",flavour:"remove",trigger:"revisemacro",setup:revisionSetup},{name:"once",flavour:"remove",trigger:"visited",setup:visitedSetup},{name:"keyremove",flavour:"remove",trigger:"key",setup:keySetup},{name:"continuelink",flavour:"continue",trigger:"link",setup:linkSetup},{name:"timedcontinue",flavour:"continue",trigger:"time",setup:timeSetup},{name:"mousecontinue",flavour:"continue",trigger:"mouse",setup:mouseSetup},{name:"keycontinue",flavour:"continue",trigger:"key",setup:keySetup},{name:"cycle",flavour:"cycle",trigger:"revisemacro",setup:revisionSetup},{name:"mousecycle",flavour:"cycle",trigger:"mouse",setup:mouseSetup},{name:"timedcycle",flavour:"cycle",trigger:"time",setup:timeSetup},{name:"keycycle",flavour:"replace",trigger:"key",setup:keySetup}].forEach(function(e){e.handler=revisionSpanHandler,e.shorthand=["link","mouse","hover"].indexOf(e.trigger)>-1,macros[e.name]=e,Macro.tags.register(e.name),begintags.push(e.name),endtags.push("/"+e.name,"end"+e.name)}),macros.revertlink=macros.reviselink=macros.randomiselink=macros.randomizelink={handler:function(a,b,c){function disableLink(l){l.style.display="none"}function enableLink(l){l.style.display="inline"}function updateLink(l){if(l.className.indexOf("random")>-1)return void enableLink(l);for(var cannext,canprev,r,fl,rall=document.querySelectorAll(".passage [data-flavour]."+rname),i=0;i<rall.length;i++)r=rall[i],fl=r.getAttribute("data-flavour"),insideDepartingSpan(r)||("cycle"===fl?cannext=canprev=!0:("false"===r.firstChild.getAttribute("data-enabled")&&(canprev=!0),"false"===r.lastChild.getAttribute("data-enabled")&&(cannext=!0)));var can=l.classList.contains("revert")?canprev:cannext;(can?enableLink:disableLink)(l)}function toggleText(w){w.classList.toggle(rl+"Enabled"),w.classList.toggle(rl+"Disabled"),w.style.display="none"===w.style.display?"inline":"none"}if(c.length<2)return void throwError(a,"<<"+b+">>: insufficient arguments (requires at least 2)");var l,rname,actName=b.slice(0,-4),rl="reviseLink",v="",end=!1,out=!1;switch(rname=c.shift().replace(" ","_"),l=insertElement(a,"a"),l.className="link-internal "+rl+" "+rl+"_"+rname+" "+actName,c.length>1&&"$"===c[0][0]&&(v=c[0].slice(1),c.shift()),c[c.length-1]){case"end":end=!0,c.pop();break;case"out":out=!0,c.pop()}for(var h=State.variables,i=0;i<c.length;i++){var on=i===Math.max(c.indexOf(h[v]),0),d=insertElement(null,"span",null,rl+(on?"En":"Dis")+"abled");on?(h[v]=c[i],l.setAttribute("data-cycle",i)):d.style.display="none",insertText(d,c[i]),l.appendChild(d)}jQuery(l).ariaClick(function(){reviseAll(actName,rname);var lall,t=this.childNodes,u=this.getAttribute("data-cycle")-0,m=t.length;if((end||out)&&u>=m-(end?2:1)){if(!end)return void this.parentNode.removeChild(this);var n=this.removeChild(t[u+1]||t[u]);n.className=rl+"End",n.style.display="inline",this.parentNode.replaceChild(n,this)}else toggleText(t[u]),u=(u+1)%m,v&&(h[v]=c[u]),toggleText(t[u]),this.setAttribute("data-cycle",u);lall=document.getElementsByClassName(rl+"_"+rname);for(var i=0;i<lall.length;i++)updateLink(lall[i])}),disableLink(l),setTimeout(function(l){return function(){updateLink(l)}}(l),1),l=null}},macros.mouserevise=macros.hoverrevise={handler:function(a,b,c,d){var endtags=["/"+b,"end"+b],evt=null===window.onmouseenter?"onmouseenter":"onmouseover",t=tagcontents(d,[b],endtags,endtags,d.source.indexOf(">>",d.matchStart)+2);if(t){var rname=c[0].replace(" ","_"),h=insertElement(a,"span",null,"hoverrevise hoverrevise_"+rname),f=function(){var done=!reviseAll("revise",rname);"hoverrevise"!=b&&done&&(this[evt]=null)};new Wikifier(h,t[0]),"hoverrevise"===b?(h.onmouseover=f,h.onmouseout=function(){reviseAll("revert",rname)}):h[evt]=f,h=null}}},Macro.tags.register("mouserevise"),Macro.tags.register("hoverrevise"),macros.instantrevise={handler:function(a,b,c,d){reviseAll("revise",c[0].replace(" ","_"))}}}();
-</script><tw-passagedata pid="1" name="It&#39;s time to pack" tags="" position="1400,350" size="100,100">You&#39;re helping your grandmother entertain Demetra for about an hour when your mother calls you over to your bedroom.
+</script><tw-passagedata pid="1" name="It&#39;s time to pack" tags="" position="1400,550" size="100,100">You&#39;re helping your grandmother entertain Demetra for about an hour when your mother calls you over to your bedroom.
 
 &quot;Me and Anna packed the bare essentials already,&quot; your mother explains. &quot;Bring whatever keepsakes you can carry. If we ever do come back to Greece, it won&#39;t be for a long time.&quot;
 
-[[Next|Packing 2]]</tw-passagedata><tw-passagedata pid="2" name="On the boat" tags="" position="1100,1200" size="100,100">&#39;&#39;November 19, 1925.&#39;&#39; 
+[[Next|Packing 2]]</tw-passagedata><tw-passagedata pid="2" name="On the boat" tags="" position="1100,1400" size="100,100">&#39;&#39;November 19, 1925.&#39;&#39; 
 //&quot;Nikos! Nikos, Wake up!&quot;//
 
 Light. Sound. Cold. You&#39;re not asleep anymore. You&#39;re being shaken by your sister. She sounds terrified. 
@@ -166,24 +151,24 @@ Do you:
 
 &lt;&lt;if $medicine eq true&gt;&gt;&lt;&lt;link [[Use the medicine you packed with you |survive]]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Use the medicine you packed with you==&lt;&lt;endif&gt;&gt;
 &lt;&lt;link [[Ask the nearest adult for help |surviveadult]]&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;&lt;link [[Ignore it and pray it goes away |die]]&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Prelude" tags="" position="1100,350" size="100,100">&quot;Are you done?&quot; Your mother asks. You nod. &quot;Good. I need to talk to your grandmother.&quot;
+&lt;&lt;link [[Ignore it and pray it goes away |die]]&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Prelude" tags="" position="1100,550" size="100,100">&quot;Are you done?&quot; Your mother asks. You nod. &quot;Good. I need to talk to your grandmother.&quot;
 
 You hear your mother and your grandmother talking in the living room. You can’t make out much of it other than your grandma saying, “[[Demetra|younger sister 2]] and I will stay here. You, Nikos and Anna should start packing!”. 
 
 [[Next|Prelude 2]]
 
-</tw-passagedata><tw-passagedata pid="4" name="bribefailure" tags="" position="1050,2550" size="100,100">Looking over his shoulder, the guard quickly takes the money out of your hands and waves you through the door.
+</tw-passagedata><tw-passagedata pid="4" name="bribefailure" tags="" position="1050,2750" size="100,100">Looking over his shoulder, the guard quickly takes the money out of your hands and waves you through the door.
 
-[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="5" name="bribepass" tags="" position="850,2400" size="100,100">Looking over his shoulder, the guard quickly takes the jewelry out of your hands and waves you through the door.
+[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="5" name="bribepass" tags="" position="850,2600" size="100,100">Looking over his shoulder, the guard quickly takes the jewelry out of your hands and waves you through the door.
 
-[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="6" name="day5" tags="" position="975,1550" size="100,100">&#39;&#39;November 21, 1925.&quot;
+[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="6" name="day5" tags="" position="975,1750" size="100,100">&#39;&#39;November 21, 1925.&quot;
 It is much colder than the last few days. You&#39;re shivering, and you can feel your teeth chattering. And to make it worse, it&#39;s been raining all day. 
 
 As the afternoon progresses, the dampness in the air seeps into your bones. Colder and colder. &lt;&lt;if $clothes eq true &amp;&amp; $blanket eq false&gt;&gt;Fortunately, you have your spare set of clothes you took with you. They offer some comfort, but it&#39;s not enough that you could call yourself warm.&lt;&lt;elseif $clothes eq true &amp;&amp; $blanket eq true&gt;&gt;Fortunately, you have both your spare set of clothes and the blanket you brought with you. You put on the extra layers and drape the blanket over yourself. You can&#39;t exactly call yourself warm, but you&#39;re no longer shivering.&lt;&lt;elseif $clothes eq false &amp;&amp; $blanket eq true&gt;&gt;Fortunately, you have the blanket you brought with you. It offers some comfort, but it&#39;s not enough that you could call yourself warm.&lt;&lt;else&gt;&gt;No amount of clothing could offer you respite, but you realize how little you have right now. You regret not bringing your extra set of clothes.&lt;&lt;endif&gt;&gt;
 
 [[Next|Day 5 2]]
 
-&lt;img src=&quot;images/cold.png&quot; width=&quot;338px&quot; height=&quot;210&quot; /&gt;</tw-passagedata><tw-passagedata pid="7" name="die" tags="" position="975,1400" size="100,100">You choose to ignore it and pray that it goes away. You stay by her side all night.
+&lt;img src=&quot;images/cold.png&quot; width=&quot;338px&quot; height=&quot;210&quot; /&gt;</tw-passagedata><tw-passagedata pid="7" name="die" tags="" position="975,1600" size="100,100">You choose to ignore it and pray that it goes away. You stay by her side all night.
 
 She slowly writhes in pain for hours as you watch her suffering with teary eyes. After 5 hours pass, she gasps out in a raspy voice, “Nikos. Anna. Come to your mother.” You and your sister hesitantly approach your mother, listening closely to her words. 
 
@@ -193,7 +178,7 @@ She slowly writhes in pain for hours as you watch her suffering with teary eyes.
 
 &lt;&lt;set $mom to &quot;dead&quot;&gt;&gt;
 
-[[Day 4 |Day 4]]</tw-passagedata><tw-passagedata pid="8" name="failure" tags="" position="1325,2500" size="100,100">The guard scoffs at you and carries you away.
+[[Day 4 |Day 4]]</tw-passagedata><tw-passagedata pid="8" name="failure" tags="" position="1325,2700" size="100,100">The guard scoffs at you and carries you away.
 
 After all your trouble, it looks like you&#39;re on your way back to where you started.
 
@@ -201,11 +186,11 @@ After all your trouble, it looks like you&#39;re on your way back to where you s
 [[Start Over from the beginning? |Beginning]]
 [[Start over from the luggage select screen?|It&#39;s time to pack]]
 
-</tw-passagedata><tw-passagedata pid="9" name="friend" tags="" position="1325,1650" size="100,100">You head to the spare room with William and meet his friends. Anna helps translate when you need to and you have a great time. They even try to teach you some English, though you don&#39;t really feel like you learned much. 
+</tw-passagedata><tw-passagedata pid="9" name="friend" tags="" position="1325,1850" size="100,100">You head to the spare room with William and meet his friends. Anna helps translate when you need to and you have a great time. They even try to teach you some English, though you don&#39;t really feel like you learned much. 
 
 &quot;Your name was Bemus, right?&quot; William asks as you turn to leave. &lt;&lt;if $mom eq &quot;live&quot;&gt;&gt;&quot;Hey, let&#39;s try and play again some time.&quot;&lt;&lt;else&gt;&gt;&quot;I heard about what happened with your mom. I&#39;m so sorry. Hopefully we were able to take your mind off things for a while. Feel free to come play with us again, if you want.&quot;&lt;&lt;endif&gt;&gt;
 
-[[Go back to your family and sleep |Day 6]]</tw-passagedata><tw-passagedata pid="10" name="items" tags="" position="1800,400" size="100,100">Choose what you want by clicking on the item&#39;s name. This will bring up a screen where you can see a description and a picture of the item before you choose to take it with you. Remember, you can only take $size items. 
+[[Go back to your family and sleep |Day 6]]</tw-passagedata><tw-passagedata pid="10" name="items" tags="" position="1800,600" size="100,100">Choose what you want by clicking on the item&#39;s name. This will bring up a screen where you can see a description and a picture of the item before you choose to take it with you. Remember, you can only take $size items. 
 
 &amp;emsp;&lt;&lt;if $medicine eq false&gt;&gt;[[Medicine|Medicine Details]]&lt;&lt;else&gt;&gt;Medicine (taken)&lt;&lt;endif&gt;&gt;&amp;emsp;&amp;emsp;&#39;&#39;||&#39;&#39;&amp;emsp;&amp;emsp;&lt;&lt;if $toys eq false&gt;&gt;[[Toys|Toy Details]]&lt;&lt;else&gt;&gt;Toys (taken)&lt;&lt;endif&gt;&gt;
 
@@ -222,15 +207,15 @@ After all your trouble, it looks like you&#39;re on your way back to where you s
 Picked the wrong item? &lt;&lt;link [[Click here to reset. |items]]&gt;&gt;&lt;&lt;set $medicine to false&gt;&gt;&lt;&lt;set $toys to false&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;set $blanket to false&gt;&gt;&lt;&lt;set $passport to false&gt;&gt;&lt;&lt;set $food to false&gt;&gt;&lt;&lt;set $clothes to false&gt;&gt;&lt;&lt;set $kit to false&gt;&gt;&lt;&lt;set $bible to false&gt;&gt;&lt;&lt;set $jewelry to false&gt;&gt;&lt;&lt;set $candy to false&gt;&gt;&lt;&lt;set $fig to false&gt;&gt;&lt;&lt;set $weight to 0&gt;&gt;&lt;&lt;/link&gt;&gt;
 
 Once you have everything you need, it&#39;s time to &lt;&lt;replacelink &quot;leave for the boat.&quot;&gt;&gt;&lt;&lt;if $weight lt $size&gt;&gt;leave for the boat. (You didn&#39;t pick enough items. Go back and pick more, then click [[here!|leave for the boat]])&lt;&lt;else&gt;&gt;&lt;&lt;goto &quot;leave for the boat&quot;&gt;&gt;&lt;&lt;endif&gt;&gt;&lt;&lt;/replacelink&gt;&gt; //&#39;&#39;Make sure you don&#39;t leave until you&#39;ve picked all $size items!&#39;&#39;//
-</tw-passagedata><tw-passagedata pid="11" name="success" tags="" position="1225,2700" size="100,100">The guard lets you pass.
+</tw-passagedata><tw-passagedata pid="11" name="success" tags="" position="1225,2900" size="100,100">The guard lets you pass.
 
-[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="12" name="survive" tags="" position="1100,1375" size="100,100">You give your mother the medicine you packed in your suitcase.
+[[Take your first step in America|Ending]]</tw-passagedata><tw-passagedata pid="12" name="survive" tags="" position="1100,1575" size="100,100">You give your mother the medicine you packed in your suitcase.
 
 After a few days, your mother is back to good health.
 
 &lt;&lt;set $mom to &quot;live&quot;&gt;&gt;
 
-[[Day 4 |Day 4]]</tw-passagedata><tw-passagedata pid="13" name="surviveadult" tags="" position="1250,1350" size="100,100">&lt;&lt;set $find to random(1,10)&gt;&gt;&lt;&lt;if $find eq 1&gt;&gt;You&#39;re extremely lucky. The woman you approached happened to be a doctor.
+[[Day 4 |Day 4]]</tw-passagedata><tw-passagedata pid="13" name="surviveadult" tags="" position="1250,1550" size="100,100">&lt;&lt;set $find to random(1,10)&gt;&gt;&lt;&lt;if $find eq 1&gt;&gt;You&#39;re extremely lucky. The woman you approached happened to be a doctor.
 
 After a few days, your mother is back to good health.
 
@@ -244,12 +229,12 @@ She slowly writhes in pain for hours as you watch her suffering with teary eyes.
 
 
 &lt;&lt;endif&gt;&gt;
-</tw-passagedata><tw-passagedata pid="14" name="translate" tags="" position="1175,1650" size="100,100">William relays the information to Anna, and she slowly interprets.
+</tw-passagedata><tw-passagedata pid="14" name="translate" tags="" position="1175,1850" size="100,100">William relays the information to Anna, and she slowly interprets.
 
 &quot;I&#39;m William. You wanna play tag? My dad knows the captain, and he lets us run around in one of the spare rooms for a little while every day. My friend tripped and hurt his leg yesterday, so we need an extra player. How about it?&quot;
 
 &lt;&lt;link [[Follow him |friend]]&gt;&gt;&lt;&lt;set $makefriend to true&gt;&gt;&lt;&lt;/link&gt;&gt;
-&lt;&lt;link [[Ignore him and stay with your family |Day 6]]&gt;&gt;&lt;&lt;set $makefriend to false&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="final" tags="" position="1125,2400" size="100,100">As the line to exit the boat pauses ahead of you, you see a security guard apologetically have to turn someone away because they do not have their passport. Do you have yours?
+&lt;&lt;link [[Ignore him and stay with your family |Day 6]]&gt;&gt;&lt;&lt;set $makefriend to false&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="15" name="final" tags="" position="1125,2600" size="100,100">As the line to exit the boat pauses ahead of you, you see a security guard apologetically have to turn someone away because they do not have their passport. Do you have yours?
 
 As you step forward do you:
 
@@ -258,12 +243,12 @@ As you step forward do you:
 &lt;&lt;if $jewelry eq true&gt;&gt;
 &lt;&lt;link [[Attempt to bribe the guard with your jewelry. |bribepass]]&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;else&gt;&gt;==Attempt to bribe the guard with your jewelry.==&lt;&lt;endif&gt;&gt;
 &lt;&lt;link [[Attempt to plead with the guard in order to pass. |failure]]&gt;&gt;&lt;&lt;/link&gt;&gt;
-</tw-passagedata><tw-passagedata pid="16" name="talk" tags="" position="1000,2200" size="100,100">&quot;Excuse me, sir,&quot; you say sheepishly. &quot;You dropped this.&quot;
+</tw-passagedata><tw-passagedata pid="16" name="talk" tags="" position="1000,2400" size="100,100">&quot;Excuse me, sir,&quot; you say sheepishly. &quot;You dropped this.&quot;
 
 &quot;Hey, thanks! You&#39;re a lifesaver, kid.&quot; He eyes you briefly. &quot;Hey, you seem pretty fit. You know, if you ever needed work when you&#39;re old enough, you could try your hand at the railroad.&quot; He hands you a business card. &quot;I work for Union Pacific. Give us a call if you&#39;re ever up for it. I&#39;ll put in a good word.&quot;
 &lt;&lt;set $railroad to true&gt;&gt;
 
-[[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="17" name="steal" tags="" position="1275,2200" size="100,100">You wait until no one is looking and swipe the wallet for yourself, slipping it into your back pocket.
+[[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="17" name="steal" tags="" position="1275,2400" size="100,100">You wait until no one is looking and swipe the wallet for yourself, slipping it into your back pocket.
 &lt;&lt;if $mom eq &quot;live&quot;&gt;&gt;
 Unfortunately for you, your mom saw you take it.
 
@@ -275,7 +260,7 @@ Begrudgingly, you walk towards the man and get his attention. &quot;I&#39;m sorr
 
 The man is obviously upset, but he appreciates that you&#39;re giving it back. He sighs to himself and shakes his head. &quot;I admire your honesty, kid. It&#39;s a good trait. Well, I hope you&#39;ve learned your lesson. You&#39;re lucky I&#39;m nice. You try that again, you might upset the wrong person. Then you&#39;ll //really// regret it.&quot;
 &lt;&lt;set $church to true&gt;&gt;
-[[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="18" name="Ending" tags="" position="1025,2800" size="100,100">&lt;&lt;if $mom eq &quot;dead&quot;&gt;&gt;
+[[Exit the boat|final]]</tw-passagedata><tw-passagedata pid="18" name="Ending" tags="" position="1025,3000" size="100,100">&lt;&lt;if $mom eq &quot;dead&quot;&gt;&gt;
 You and your sister exit the ship and see your father eagerly waiting. He spots you and starts running over.
 
 &quot;Nikos! Anna! I&#39;m so glad you&#39;re here!&quot; He hugs you tightly. &quot;Where&#39;s your mother? I figured she would be with you.&quot;
@@ -292,15 +277,15 @@ Once he composes himself, your father drives the two of you to the airport, and 
 
 
 
-</tw-passagedata><tw-passagedata pid="19" name="Day 7" tags="" position="1125,2025" size="100,100">&#39;&#39;November 25, 1925.&#39;&#39;
+</tw-passagedata><tw-passagedata pid="19" name="Day 7" tags="" position="1125,2225" size="100,100">&#39;&#39;November 25, 1925.&#39;&#39;
 The boat has finally docked in America. You&#39;re in a place called &quot;Ellis Island&quot;, based on what you overhear from the other passengers. You have no idea what that means. You and your family are heading towards the exit. As you are heading over, a tall, large American man walks by and drops his wallet which visibly contains a large amount of cash, do you:
 
 [[Pick it up and give it to him|talk]]
 [[Wait a bit and take it for yourself|steal]]
 [[Leave it alone|leave]]	
-&lt;img src=&quot;images/ellis.png&quot; width=&quot;349px&quot; height=&quot;380px&quot; /&gt;</tw-passagedata><tw-passagedata pid="20" name="leave" tags="" position="1125,2225" size="100,100">You decide to leave it alone and leave the boat.
+&lt;img src=&quot;images/ellis.png&quot; width=&quot;349px&quot; height=&quot;380px&quot; /&gt;</tw-passagedata><tw-passagedata pid="20" name="leave" tags="" position="1125,2425" size="100,100">You decide to leave it alone and leave the boat.
 
-[[Leave the boat|final]]</tw-passagedata><tw-passagedata pid="21" name="Beginning" tags="" position="625,325" size="100,100">It&#39;s quieter outside than normal--the day is cold and ice coats the streets. You hear the front door open.
+[[Leave the boat|final]]</tw-passagedata><tw-passagedata pid="21" name="Beginning" tags="" position="625,525" size="100,100">It&#39;s quieter outside than normal--the day is cold and ice coats the streets. You hear the front door open.
 
 &quot;Welcome home!&quot; You say to your mother. She puts her bag down and pulls out a letter. She slumps into the chair across from the kitchen table from you. &quot;What&#39;s that?&quot;
 
@@ -308,7 +293,7 @@ She hands you the letter without a word. She rubs her temples, obviously anxious
 
 [[Next|Beginning 2]]
 
-</tw-passagedata><tw-passagedata pid="22" name="Letter" tags="" position="900,350" size="100,100">The note from your dad says:
+</tw-passagedata><tw-passagedata pid="22" name="Letter" tags="" position="900,550" size="100,100">The note from your dad says:
 
 //Dear Eleni,
 I can&#39;t believe my luck! Right next to the candy shop where I work, there was an immigration lottery, and I won three 3rd class tickets for a boat to America! The ship is departing on November 17th at 7 PM! I can&#39;t wait to see you all!
@@ -317,7 +302,7 @@ Love,
 Petros//
 
 &lt;img src=&quot;images/note.png&quot; width=&quot;365px&quot; height=&quot;231&quot; /&gt;
-[[Next|Prelude]]</tw-passagedata><tw-passagedata pid="23" name="boat check" tags="" position="1325,625" size="100,100">&lt;&lt;if $size lt 4&gt;&gt;&lt;&lt;set $check to random(1,3)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $check to random(1,10)&gt;&gt;&lt;&lt;endif&gt;&gt;&lt;&lt;if $check eq 1&gt;&gt;Before getting on the boat, one of the other passengers comes up to you.
+[[Next|Prelude]]</tw-passagedata><tw-passagedata pid="23" name="boat check" tags="" position="1325,825" size="100,100">&lt;&lt;if $size lt 4&gt;&gt;&lt;&lt;set $check to random(1,3)&gt;&gt;&lt;&lt;else&gt;&gt;&lt;&lt;set $check to random(1,10)&gt;&gt;&lt;&lt;endif&gt;&gt;&lt;&lt;if $check eq 1&gt;&gt;Before getting on the boat, one of the other passengers comes up to you.
 
 &quot;Please, help me. I&#39;m boarding with nothing. The guards refused to let my luggage on board because it was too big. Please, if you could spare anything at all, I would be so grateful.&quot;
 
@@ -362,19 +347,19 @@ The items you carried with you are bulky enough that you can only fit 2 in your 
 [[You dig through your trunk and choose two items to bring...|newitemscreen]]
 &lt;&lt;endif&gt;&gt;
 
-</tw-passagedata><tw-passagedata pid="24" name="boatfail" tags="" position="1775,800" size="100,100">Unfortunately, you and your family have been denied entry. You&#39;ll have to try again with the ship coming [[next month.|It&#39;s time to pack]]</tw-passagedata><tw-passagedata pid="25" name="Day 1" tags="" position="1150,725" size="100,100">You&#39;re finally on board. You spend your first day learning where everything is. Not much of the ship is available to you, as most of it is reserved for the ship&#39;s crew. 
+</tw-passagedata><tw-passagedata pid="24" name="boatfail" tags="" position="1775,1000" size="100,100">Unfortunately, you and your family have been denied entry. You&#39;ll have to try again with the ship coming [[next month.|It&#39;s time to pack]]</tw-passagedata><tw-passagedata pid="25" name="Day 1" tags="" position="1150,925" size="100,100">You&#39;re finally on board. You spend your first day learning where everything is. Not much of the ship is available to you, as most of it is reserved for the ship&#39;s crew. 
 
 &quot;How long will we be traveling for?&quot; You ask once you reach the communal sleeping area at the end of the day.
 
 [[Next|Day 1 2]]
-</tw-passagedata><tw-passagedata pid="26" name="Day 2" tags="" position="1050,925" size="100,100">&#39;&#39;November 18, 1925.&#39;&#39; 
+</tw-passagedata><tw-passagedata pid="26" name="Day 2" tags="" position="1050,1125" size="100,100">&#39;&#39;November 18, 1925.&#39;&#39; 
 The first night&#39;s sleep was not a good one. You toss and turn for what seems like hours until suddenly, it&#39;s morning.
 
 &quot;Hey, Nikos,&quot; Anna says to you. &quot;I&#39;m bored. You&#39;re bored. Let&#39;s go look around.&quot;
 
 &quot;Didn&#39;t we do that yesterday?&quot; You say, rubbing your eyes.
 
-[[Next|Day 2 2]]</tw-passagedata><tw-passagedata pid="27" name="Day 4" tags="" position="1125,1500" size="100,100">&#39;&#39;November 20, 1925.&#39;&#39;
+[[Next|Day 2 2]]</tw-passagedata><tw-passagedata pid="27" name="Day 4" tags="" position="1125,1700" size="100,100">&#39;&#39;November 20, 1925.&#39;&#39;
 A sailor walks into the sleeping quarters.
 
 &quot;Attention, everyone! We need volunteers to help us around the ship. Anyone willing to help, step forward.&quot;
@@ -387,10 +372,10 @@ Helping clean the ship is the last thing on your mind. You haven&#39;t had any t
 
 You spend the day walking around the ship, collecting garbage and sweeping up any trash you find along the way.
 
-[[Day 5|day5]]</tw-passagedata><tw-passagedata pid="28" name="Day 6" tags="" position="1075,1850" size="100,100">&#39;&#39;November 22, 1925.&#39;&#39;
+[[Day 5|day5]]</tw-passagedata><tw-passagedata pid="28" name="Day 6" tags="" position="1075,2050" size="100,100">&#39;&#39;November 22, 1925.&#39;&#39;
 You wake up the next morning to the violent sounds of the ship sailing through a huge storm. The ship often violently rocks and there are an enormous amount of sounds coming from above the ship. You have no choice but to stay in your sleeping quarters.
 
-[[3 days later|Day 7]]</tw-passagedata><tw-passagedata pid="29" name="Intro" tags="" position="475,325" size="100,100">&#39;&#39;November 17, 1925.&#39;&#39; 
+[[3 days later|Day 7]]</tw-passagedata><tw-passagedata pid="29" name="Intro" tags="" position="475,525" size="100,100">&#39;&#39;November 17, 1925.&#39;&#39; 
 
 Your name is [[Nikos|Bemus]]. You&#39;re a young boy living in Greece. Today, you&#39;re playing around with your [[younger sister]] alongside your [[grandmother]]. Your [[mother]] and [[older sister]] are out grabbing the mail from the post office. 
 &lt;img src=&quot;images/house.png&quot; width=&quot;306px&quot; height=&quot;194px&quot;/&gt;
@@ -400,17 +385,20 @@ Your name is [[Nikos|Bemus]]. You&#39;re a young boy living in Greece. Today, yo
 &lt;&lt;audio &quot;music&quot; volume 0 fadeto 0.25&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;&lt;audio &quot;music&quot; stop&gt;&gt;
-&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="leave for the boat" tags="" position="1800,575" size="100,100">You&#39;ve brought all you can carry. You take one last look at your bedroom and sigh. 
+&lt;&lt;endif&gt;&gt;</tw-passagedata><tw-passagedata pid="30" name="leave for the boat" tags="" position="1800,775" size="100,100">You&#39;ve brought all you can carry. You take one last look at your bedroom and sigh. 
 //I&#39;ll never sleep in this room again...//
 
 &quot;We&#39;ve got about 2 hours to make it to this boat,&quot; your mother says. &quot;We&#39;re going to have to walk. It looks like we should have enough time to get there if we leave now. Anna, I&#39;ll leave you in charge of directions. Here&#39;s the map of the city.&quot;
 //I&#39;ll never see this city again...//
 
 [[Next|Leave 2]]
-</tw-passagedata><tw-passagedata pid="31" name="Features for next version" tags="" position="1400,800" size="100,100">
+</tw-passagedata><tw-passagedata pid="31" name="Features for next version" tags="" position="1400,1000" size="100,100">
+make &quot;GEM Studios&quot; bigger
 text to speech
 
-later: add some more places where picking an item changes the flavor text
+Find royalty free fig picture
+
+add some more places where picking an item changes the flavor text
 
 Most important:
 figure out final hosting site
@@ -480,26 +468,26 @@ Text to speech
 
 
 hi i&#39;m luna i&#39;m the only programmer for the game lol
-you&#39;re welcome :3</tw-passagedata><tw-passagedata pid="32" name="Day 9" tags="" position="1875,1950" size="100,100">The storm lasted for 3 days and nights, you&#39;re walking around with your sister on the 9th day of your trip after the storm and see a huddle of upset Greek parents and children, you can choose to: 
+you&#39;re welcome :3</tw-passagedata><tw-passagedata pid="32" name="Day 9" tags="" position="1875,2150" size="100,100">The storm lasted for 3 days and nights, you&#39;re walking around with your sister on the 9th day of your trip after the storm and see a huddle of upset Greek parents and children, you can choose to: 
 &lt;&lt;if $bible eq true&gt;&gt;[[Show them your Orthodox icon|Day 7]]&lt;&lt;else&gt;&gt;==Show them your Orthodox icon==&lt;&lt;endif&gt;&gt;
 &lt;&lt;if $toys eq true&gt;&gt;[[Let them borrow your toys|Day 7]]&lt;&lt;else&gt;&gt;==Let them borrow your toys==&lt;&lt;endif&gt;&gt;
-[[Go to bed|Day 7]]</tw-passagedata><tw-passagedata pid="33" name="Bemus" tags="" position="100,500" size="100,100">&lt;img src=&quot;images/bemus.png&quot; /&gt;
+[[Go to bed|Day 7]]</tw-passagedata><tw-passagedata pid="33" name="Bemus" tags="" position="100,700" size="100,100">&lt;img src=&quot;images/bemus.png&quot; /&gt;
 You just turned 15 a month ago. Ever since your father left to America, you&#39;ve been taken care of by your mother and grandmother. 
 
-[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="34" name="younger sister" tags="" position="100,400" size="100,100">&lt;img src=&quot;images/lanthe.png&quot; /&gt;
+[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="34" name="younger sister" tags="" position="100,600" size="100,100">&lt;img src=&quot;images/lanthe.png&quot; /&gt;
 Your younger sister, Demetra. She&#39;s very shy, and doesn&#39;t seem to talk to anyone aside from your grandmother.
 
-[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="35" name="grandmother" tags="" position="100,300" size="100,100">&lt;img src=&quot;images/agata.png&quot; width=&quot;328px&quot; height=&quot;451px&quot; /&gt;
+[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="35" name="grandmother" tags="" position="100,500" size="100,100">&lt;img src=&quot;images/agata.png&quot; width=&quot;328px&quot; height=&quot;451px&quot; /&gt;
 Your dear &#39;Yiayia&#39;, Katina. She&#39;s been helping take care of your ever since your father left to work in America.
 
-[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="36" name="mother" tags="" position="100,200" size="100,100">&lt;img src=&quot;images/nora.png&quot; /&gt;
+[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="36" name="mother" tags="" position="100,400" size="100,100">&lt;img src=&quot;images/nora.png&quot; /&gt;
 
 Your mother, Eleni. When your father left to America to find work, she stayed behind to take care of you and your sisters. Every day she promises you that she will do whatever it takes to keep you all safe.
 
-[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="37" name="older sister" tags="" position="100,100" size="100,100">&lt;img src=&quot;images/lotus.png&quot; /&gt;
+[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="37" name="older sister" tags="" position="100,300" size="100,100">&lt;img src=&quot;images/lotus.png&quot; /&gt;
 Your older sister, Anna. You would never admit it to her, but she&#39;s the smartest person you&#39;ve ever met. She learned English in school, and is very outgoing.
 
-[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="38" name="newitemscreen" tags="" position="1150,575" size="100,100">&lt;&lt;set $weight to 0&gt;&gt;&lt;&lt;set $size to 2&gt;&gt;&lt;&lt;if $medicine eq true&gt;&gt;&lt;&lt;set $medicine to false&gt;&gt;&lt;&lt;replacelink &quot;Medicine&quot;&gt;&gt;&lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;set $medicine to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;Medicine (taken)&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;&lt;&lt;/replacelink&gt;&gt;&lt;&lt;else&gt;&gt;Medicine (at home)&lt;&lt;endif&gt;&gt;
+[[Go Back|Intro]]</tw-passagedata><tw-passagedata pid="38" name="newitemscreen" tags="" position="1150,775" size="100,100">&lt;&lt;set $weight to 0&gt;&gt;&lt;&lt;set $size to 2&gt;&gt;&lt;&lt;if $medicine eq true&gt;&gt;&lt;&lt;set $medicine to false&gt;&gt;&lt;&lt;replacelink &quot;Medicine&quot;&gt;&gt;&lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;set $medicine to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;Medicine (taken)&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;&lt;&lt;/replacelink&gt;&gt;&lt;&lt;else&gt;&gt;Medicine (at home)&lt;&lt;endif&gt;&gt;
 
 &lt;&lt;if $toys eq true&gt;&gt;&lt;&lt;set $toys to false&gt;&gt;&lt;&lt;replacelink &quot;Toys&quot;&gt;&gt;&lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;set $toys to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;Toys (taken)&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;&lt;&lt;/replacelink&gt;&gt;&lt;&lt;else&gt;&gt;Toys (at home)&lt;&lt;endif&gt;&gt;
 
@@ -519,98 +507,97 @@ Your older sister, Anna. You would never admit it to her, but she&#39;s the smar
 
 &lt;&lt;if $fig eq true&gt;&gt;&lt;&lt;set $fig to false&gt;&gt;&lt;&lt;replacelink &quot;Dried Figs&quot;&gt;&gt;&lt;&lt;if $weight lt $size&gt;&gt;&lt;&lt;set $fig to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;Dried Figs (taken)&lt;&lt;else&gt;&gt;You have no more space.&lt;&lt;endif&gt;&gt;&lt;&lt;/replacelink&gt;&gt;&lt;&lt;else&gt;&gt;Dried Figs (at home)&lt;&lt;endif&gt;&gt;
 
-Once you&#39;ve picked your two items, it&#39;s time to finally [[board the boat.|Day 1]]</tw-passagedata><tw-passagedata pid="39" name="Untitled Passage" tags="" position="425,475" size="100,100">&lt;h1 style=&quot;font-size:45px;&quot;&gt;The Greek American Odyssey&lt;/h1&gt;
+Once you&#39;ve picked your two items, it&#39;s time to finally [[board the boat.|Day 1]]</tw-passagedata><tw-passagedata pid="39" name="Untitled Passage" tags="" position="425,675" size="100,100">&lt;h1 style=&quot;font-size:45px;&quot;&gt;The Greek American Odyssey&lt;/h1&gt;
 &lt;img src=&quot;images/museumlogo.jpg&quot; width=&quot;193&quot; height=&quot;226&quot; id=&quot;title&quot; /&gt;
 &lt;h3 style=&quot;font-size:30px;&quot;&gt;&lt;&lt;link [[Start (With Music)|Intro]]&gt;&gt;&lt;&lt;set $sound to true&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;/h3&gt;
 &lt;h3 style=&quot;font-size:30px;&quot;&gt;[[Start (Without Music)|Intro]]&lt;/h3&gt;
-&lt;&lt;cacheaudio &quot;music&quot; &quot;sounds/music.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Medicine Details" tags="" position="1250,200" size="100,100">&lt;img src=&quot;images/medicine.png&quot; width=&quot;252px&quot; height=&quot;530px&quot; /&gt;
+&lt;&lt;cacheaudio &quot;music&quot; &quot;sounds/music.mp3&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="40" name="Medicine Details" tags="" position="1250,400" size="100,100">&lt;img src=&quot;images/medicine.png&quot; width=&quot;252px&quot; height=&quot;530px&quot; /&gt;
 Who knows what kind of diseases you might find on board. Hopefully this medicine will do the job if necessary.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $medicine eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $medicine to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="41" name="Toy Details" tags="" position="1350,200" size="100,100">&lt;img src=&quot;images/toy.png&quot; width=&quot;252px&quot; height=&quot;336px&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="41" name="Toy Details" tags="" position="1350,400" size="100,100">&lt;img src=&quot;images/toy.png&quot; width=&quot;252px&quot; height=&quot;336px&quot; /&gt;
 This is just about the only toy you own. You&#39;ll be on this boat for a long time, and you have no idea how you&#39;re going to entertain yourself. Maybe this will help kill time.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $toys eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $toys to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="42" name="Money Details" tags="" position="1450,200" size="100,100">&lt;img src=&quot;images/money.png&quot; width=&quot;286px&quot; height=&quot;130px&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="42" name="Money Details" tags="" position="1450,400" size="100,100">&lt;img src=&quot;images/money.png&quot; width=&quot;286px&quot; height=&quot;130px&quot; /&gt;
 100 Greek Drachma, the last of your savings. Unfortunately, you don&#39;t know the conversion rate to United States Dollars. Hopefully it&#39;ll be enough. You might still have a use for it before you reach America, though.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $money eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $money to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
 [[Leave it behind|items]]
-</tw-passagedata><tw-passagedata pid="43" name="Blanket Details" tags="" position="1550,200" size="100,100">&lt;img src=&quot;images/blanket.png&quot; width=&quot;338px&quot; height=&quot;252px&quot; /&gt;
+</tw-passagedata><tw-passagedata pid="43" name="Blanket Details" tags="" position="1550,400" size="100,100">&lt;img src=&quot;images/blanket.png&quot; width=&quot;338px&quot; height=&quot;252px&quot; /&gt;
 Handmade by your grandmother. A trip across the sea is guaranteed to get cold. Having blankets on hand may help you feel more comfortable.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $blanket eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $blanket to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="44" name="Passport Details" tags="" position="1650,200" size="100,100">&lt;img src=&quot;images/passport.png&quot; width=&quot;252px&quot; height=&quot;413px&quot;/&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="44" name="Passport Details" tags="" position="1650,400" size="100,100">&lt;img src=&quot;images/passport.png&quot; width=&quot;252px&quot; height=&quot;413px&quot;/&gt;
 It&#39;s a way of identifying yourself. Your father didn’t have one when he went to America, but times have changed since then and you may need it for what&#39;s to come.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $passport eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $passport to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="45" name="Water Details" tags="" position="1750,200" size="100,100">&lt;img src=&quot;images/water.png&quot; width=&quot;293px&quot; height=&quot;391px&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="45" name="Water Details" tags="" position="1750,400" size="100,100">&lt;img src=&quot;images/water.png&quot; width=&quot;293px&quot; height=&quot;391px&quot; /&gt;
 A spare canteen of water. Who knows how the water on board the ship will taste. Bringing this along may make the long trip more bearable.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $food eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $food to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="46" name="Clothing Details" tags="" position="1850,200" size="100,100">&lt;img src=&quot;images/clothing.png&quot; width=&quot;304px&quot; height=&quot;248px&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="46" name="Clothing Details" tags="" position="1850,400" size="100,100">&lt;img src=&quot;images/clothing.png&quot; width=&quot;304px&quot; height=&quot;248px&quot; /&gt;
 While it doesn’t seem like much, it represents the culture you came from. Besides, it might be a good idea to bring some extra layers.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $clothes eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $clothes to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="47" name="Kit Details" tags="" position="1950,200" size="100,100">&lt;img src=&quot;images/kit.png&quot; width=&quot;306px&quot; height=&quot;329px&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="47" name="Kit Details" tags="" position="1950,400" size="100,100">&lt;img src=&quot;images/kit.png&quot; width=&quot;306px&quot; height=&quot;329px&quot; /&gt;
 Soap and a toothbrush. You&#39;re going to be on this boat for a while. Keeping yourself clean seems like a good idea.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $kit eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $kit to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="48" name="Icon Details" tags="" position="2050,200" size="100,100">&lt;img src=&quot;images/icon.png&quot; width=&quot;310px&quot; height=&quot;377px&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="48" name="Icon Details" tags="" position="2050,400" size="100,100">&lt;img src=&quot;images/icon.png&quot; width=&quot;310px&quot; height=&quot;377px&quot; /&gt;
 As devout followers of the Church, your parents always made you carry a small icon on you. You ask yourself what kind of God would force you to abandon your life like this.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $bible eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $bible to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="49" name="Jewelry Details" tags="" position="2150,200" size="100,100">&lt;img src=&quot;images/jewelry.png&quot; width=&quot;307px&quot; height=&quot;204px&quot;/&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="49" name="Jewelry Details" tags="" position="2150,400" size="100,100">&lt;img src=&quot;images/jewelry.png&quot; width=&quot;307px&quot; height=&quot;204px&quot;/&gt;
 A longtime family heirloom, passed down to you. It’s not much, but it’s valuable enough that you could probably pawn it off to make some quick cash.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $jewelry eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $jewelry to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="50" name="Candy Details" tags="" position="2250,200" size="100,100">&lt;img src=&quot;images/candy.png&quot; width=&quot;336px&quot; height=&quot;252px&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="50" name="Candy Details" tags="" position="2250,400" size="100,100">&lt;img src=&quot;images/candy.png&quot; width=&quot;336px&quot; height=&quot;252px&quot; /&gt;
 Your father was a skilled candymaker in your hometown. He left his candy crafting machines back home, so maybe he would want them brought over.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $candy eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $candy to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="51" name="Fig Details" tags="" position="2350,200" size="100,100">&lt;img src=&quot;images/fig.png&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="51" name="Fig Details" tags="" position="2350,400" size="100,100">&lt;img src=&quot;images/fig.png&quot; width=&quot;300px&quot; height=&quot;300px&quot; /&gt;
 Extra food to keep yourself and your family properly fed on the trip to America.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $fig eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $fig to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="52" name="younger sister 2" tags="" position="1025,475" size="100,100">&lt;img src=&quot;images/lanthe.png&quot; /&gt;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="52" name="younger sister 2" tags="" position="1025,675" size="100,100">&lt;img src=&quot;images/lanthe.png&quot; /&gt;
 Your younger sister, Demetra. She&#39;s very shy, and doesn&#39;t seem to talk to anyone aside from your grandmother.
 
-[[Go Back|Prelude]]</tw-passagedata><tw-passagedata pid="53" name="grandmother 2" tags="" position="2100,650" size="100,100">&lt;img src=&quot;images/agata.png&quot; /&gt;
+[[Go Back|Prelude]]</tw-passagedata><tw-passagedata pid="53" name="grandmother 2" tags="" position="2100,850" size="100,100">&lt;img src=&quot;images/agata.png&quot; /&gt;
 Your dear grandmother, Agata. She&#39;s been helping take care of your ever since your father left to work in America.
 
-[[Go Back|leave for the boat]]</tw-passagedata><tw-passagedata pid="54" name="Credits" tags="" position="1025,3050" size="100,100">&lt;h1&gt;&#39;&#39;Your odyssey is over.&#39;&#39; &lt;/h1&gt;
+[[Go Back|leave for the boat]]</tw-passagedata><tw-passagedata pid="54" name="Credits" tags="" position="1025,3250" size="100,100">Your odyssey is over. 
 
 Don&#39;t like how it ended? Try again and see if you can obtain a different ending!
 [[Start Over from the title screen?|Untitled Passage]]
 [[Start Over from the beginning? |Beginning]]
 [[Start over from the luggage select screen?|It&#39;s time to pack]]
 
-&#39;&#39;Credits:&#39;&#39;
 &#39;&#39;A National Hellenic Museum Game&#39;&#39;
-&lt;h2 id=&quot;credits&quot;&gt;&#39;&#39;Created by GEM Studios&#39;&#39;&lt;/h2&gt;
+
+&#39;&#39;Created by GEM Studios&#39;&#39;
 
 &#39;&#39;Producer:&#39;&#39; Gabriel Beutel
 &#39;&#39;Technical Lead:&#39;&#39; Jorge Anzaldo 
 &#39;&#39;Additional Help:&#39;&#39; Marcin Landa, Jason Guo
 
 &#39;&#39;Acknowledgements:&#39;&#39; Jennifer deWinter, Illinois Institute of Technology, Katie Kelaidis, Elena Kountoures
-Dried Fig &lt;a href=&quot;https://www.freepik.com/free-photo/whole-fig-fig-slices-white_11890964.htm#page=3&amp;query=dried%20fig&amp;position=32&amp;from_view=keyword&amp;track=ais&amp;uuid=19c34ab7-9f31-4b3c-8e71-c4c48fb241fa&quot;&gt;Image by azerbaijan_stockers&lt;/a&gt; on Freepik
 
-&#39;&#39;Music:&#39;&#39; https://www.youtube.com/watch?v=_wRB0GKlJR8 
+&#39;&#39;Music:&#39;&#39; 
 
-Special thanks to everyone who playtested our game during development.</tw-passagedata><tw-passagedata pid="55" name="Ending 2" tags="" position="1025,2925" size="100,100">&lt;&lt;if $mom eq &quot;dead&quot;&gt;&gt;Your father had plans to start his own business, but the loss of his wife has dashed them. You end up working in the local market with your sister and father to make ends meet.
+Special thanks to everyone who playtested our game during development.</tw-passagedata><tw-passagedata pid="55" name="Ending 2" tags="" position="1025,3125" size="100,100">&lt;&lt;if $mom eq &quot;dead&quot;&gt;&gt;Your father had plans to start his own business, but the loss of his wife has dashed them. You end up working in the local market with your sister and father to make ends meet.
 
 &lt;&lt;if $makefriend eq true&gt;&gt;Occasionally, you see William around town. Coincidentally, his father lives in Chicago as well. You don&#39;t talk to him often, but he and his family did come to your mother&#39;s memorial service.&lt;&lt;else&gt;&gt;Occasionaly, you see that kid who tried to talk to you on the boat. Apparently he lives in Chicago as well. You never talk to him.&lt;&lt;endif&gt;&gt;
 
@@ -624,17 +611,17 @@ Special thanks to everyone who playtested our game during development.</tw-passa
 &lt;&lt;if $makefriend eq true&gt;&gt;Occasionally, you see William around town. Coincidentally, his father lives in Chicago as well. You make an effort to see him at least once a week. While you and William are off together, his father talks to yours. It turns out his father is fairly wealthy. Considering that you treated his son well on the ride here, his father listens to your dad&#39;s business plans more intently than you ever did. The two of them actually decide to make it happen, and what better employees than their own children?&lt;&lt;else&gt;&gt;Occasionally, you see that kid who tried to talk to you on the boat. Coincidentally, he lives in Chicago as well. You never really interact with him, but sometimes you wonder what things would be like if you talked to him on the boat.&lt;&lt;endif&gt;&gt;
 &lt;&lt;endif&gt;&gt;
 
-[[Next|Credits]]</tw-passagedata><tw-passagedata pid="56" name="Beginning 2" tags="" position="750,325" size="100,100">&quot;It&#39;s from your dad,&quot; she explains. &quot;Go ahead and read it. You&#39;ll want to be sitting.&quot;
+[[Next|Credits]]</tw-passagedata><tw-passagedata pid="56" name="Beginning 2" tags="" position="750,525" size="100,100">&quot;It&#39;s from your dad,&quot; she explains. &quot;Go ahead and read it. You&#39;ll want to be sitting.&quot;
 
 You slide the letter out from its envelope. Three tickets and a picture of your father fall into your hands. You glance again at your mother. She sighs and looks out the window.
 
 &lt;img src=&quot;images/dad.png&quot; width=&quot;361px&quot; height=&quot;230px&quot;  /&gt;
 
-[[Read the letter|Letter]]</tw-passagedata><tw-passagedata pid="57" name="Prelude 2" tags="" position="1250,350" size="100,100">You&#39;re not entirely sure how to feel about the news. You feel a mixture of fear and excitement.  You&#39;ll have to leave today. Your life as you know it is now over. You&#39;ll have to completely uproot yourself, start over in a new country. Who knows if you will ever see your grandmother or Lanthe again. But maybe life in America will be better. At least you&#39;ll get the chance to see your dad. 
+[[Read the letter|Letter]]</tw-passagedata><tw-passagedata pid="57" name="Prelude 2" tags="" position="1250,550" size="100,100">You&#39;re not entirely sure how to feel about the news. You feel a mixture of fear and excitement.  You&#39;ll have to leave today. Your life as you know it is now over. You&#39;ll have to completely uproot yourself, start over in a new country. Who knows if you will ever see your grandmother or Lanthe again. But maybe life in America will be better. At least you&#39;ll get the chance to see your dad. 
 
 You can hear your mother walking back into the kitchen. &quot;Spend some time with Grandma and Demetra,&quot; she says. &quot;I&#39;ll start packing.&quot;
 	
-[[Later...|It&#39;s time to pack]]</tw-passagedata><tw-passagedata pid="58" name="Packing 2" tags="" position="1575,350" size="100,100">First, you need to choose the size of your luggage. You can choose between a knapsack which carries 3 items, a suitcase which carries 5 or a chest which carries 8.
+[[Later...|It&#39;s time to pack]]</tw-passagedata><tw-passagedata pid="58" name="Packing 2" tags="" position="1575,575" size="100,100">First, you need to choose the size of your luggage. You can choose between a knapsack which carries 3 items, a suitcase which carries 5 or a chest which carries 8.
 
 &quot;You might not want to bring too much with you, Nikos,&quot; your mother tells you. &quot;They might not allow large luggage on board, and there&#39;s no way to tell until we get there.&quot;
 
@@ -644,27 +631,27 @@ You can hear your mother walking back into the kitchen. &quot;Spend some time wi
 
 &lt;img src=&quot;images/Luggage.png&quot; width=&quot;359px&quot; height=&quot;273px&quot; /&gt;
 
-&lt;&lt;set $medicine to false&gt;&gt;&lt;&lt;set $toys to false&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;set $blanket to false&gt;&gt;&lt;&lt;set $passport to false&gt;&gt;&lt;&lt;set $food to false&gt;&gt;&lt;&lt;set $clothes to false&gt;&gt;&lt;&lt;set $kit to false&gt;&gt;&lt;&lt;set $bible to false&gt;&gt;&lt;&lt;set $jewelry to false&gt;&gt;&lt;&lt;set $candy to false&gt;&gt;&lt;&lt;set $fig to false&gt;&gt;&lt;&lt;set $weight to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="59" name="Leave 2" tags="" position="1625,575" size="100,100">Anna reads the name of the port off her ticket and quickly scans the map to see where you&#39;ll need to go. It only takes her a few minutes before she picks her head up and says, &quot;Alright. I know where we need to go.&quot;
+&lt;&lt;set $medicine to false&gt;&gt;&lt;&lt;set $toys to false&gt;&gt;&lt;&lt;set $money to false&gt;&gt;&lt;&lt;set $blanket to false&gt;&gt;&lt;&lt;set $passport to false&gt;&gt;&lt;&lt;set $food to false&gt;&gt;&lt;&lt;set $clothes to false&gt;&gt;&lt;&lt;set $kit to false&gt;&gt;&lt;&lt;set $bible to false&gt;&gt;&lt;&lt;set $jewelry to false&gt;&gt;&lt;&lt;set $candy to false&gt;&gt;&lt;&lt;set $fig to false&gt;&gt;&lt;&lt;set $weight to 0&gt;&gt;</tw-passagedata><tw-passagedata pid="59" name="Leave 2" tags="" position="1625,775" size="100,100">Anna reads the name of the port off her ticket and quickly scans the map to see where you&#39;ll need to go. It only takes her a few minutes before she picks her head up and says, &quot;Alright. I know where we need to go.&quot;
 
 &quot;How are you so good at that?&quot; You ask her, bewildered.
 
 &quot;Because I&#39;m smarter than you,&quot; she teases.
-[[Next|Leave 3]]</tw-passagedata><tw-passagedata pid="60" name="Leave 3" tags="" position="1475,575" size="100,100">You give tearful goodbyes to Demetra and your grandmother and start walking towards the dock.&lt;&lt;if $size eq 8&gt;&gt; Your arms quickly become sore from dragging such a large chest with you.&lt;&lt;endif&gt;&gt; After an hour and a half of walking, the three of you finally arrive at the dock. Near one of the boats, you can see a long line of people waiting to board, all carrying luggage and papers in their hands. That must be your boat. After a long wait, it&#39;s finally your turn to board. [[Once you get there…|boat check]]
+[[Next|Leave 3]]</tw-passagedata><tw-passagedata pid="60" name="Leave 3" tags="" position="1475,775" size="100,100">You give tearful goodbyes to Demetra and your grandmother and start walking towards the dock.&lt;&lt;if $size eq 8&gt;&gt; Your arms quickly become sore from dragging such a large chest with you.&lt;&lt;endif&gt;&gt; After an hour and a half of walking, the three of you finally arrive at the dock. Near one of the boats, you can see a long line of people waiting to board, all carrying luggage and papers in their hands. That must be your boat. After a long wait, it&#39;s finally your turn to board. [[Once you get there…|boat check]]
 
-&lt;img src=&quot;images/boarding.png&quot; width=&quot;339px&quot; height=&quot;249px&quot; /&gt;</tw-passagedata><tw-passagedata pid="61" name="dead" tags="" position="1275,1475" size="100,100">“I believe I don’t have much time left. Both of you, take care of yourselves and your family.&quot;  She croaks out one more “I love you” before her heart ceases to beat, expiring away in your arms. Your mother is dead. You and Anna spend the rest of the night next to her, sobbing.
+&lt;img src=&quot;images/boarding.png&quot; width=&quot;339px&quot; height=&quot;249px&quot; /&gt;</tw-passagedata><tw-passagedata pid="61" name="dead" tags="" position="1275,1675" size="100,100">“I believe I don’t have much time left. Both of you, take care of yourselves and your family.&quot;  She croaks out one more “I love you” before her heart ceases to beat, expiring away in your arms. Your mother is dead. You and Anna spend the rest of the night next to her, sobbing.
 &lt;&lt;set $mom to &quot;dead&quot;&gt;&gt;
 //I&#39;ll never see my mother again...//
-[[Day 4]]</tw-passagedata><tw-passagedata pid="62" name="Day 1 2" tags="" position="1000,800" size="100,100">&quot;About 8 days&quot;, Anna replies. &quot;We&#39;re going to be going past Italy, Spain, Portugal, Tunisia, Algeria and Morocco. After that it&#39;s a straight line to the United States.&quot;
+[[Day 4]]</tw-passagedata><tw-passagedata pid="62" name="Day 1 2" tags="" position="1000,1000" size="100,100">&quot;About 8 days&quot;, Anna replies. &quot;We&#39;re going to be going past Italy, Spain, Portugal, Tunisia, Algeria and Morocco. After that it&#39;s a straight line to the United States.&quot;
 
 Your mother leads you and Anna in a prayer and then the three of you go to bed. You lie awake for a long time, staring at the ceiling. The reality of your current situation dawns on you. You&#39;re going to be on this boat for a long time. 
 
 It doesn&#39;t help that your mother can&#39;t stop coughing.
 
-[[Day 2]]</tw-passagedata><tw-passagedata pid="63" name="Day 2 2" tags="" position="1100,1050" size="100,100">&quot;Maybe they&#39;ll let us see more of the ship if we ask nicely. We&#39;re still kids, after all. They won&#39;t worry about us being in the crew areas. Maybe they&#39;ll worry about us breaking something, sure, but that&#39;d be their fault for letting us in.&quot; She smiles.
+[[Day 2]]</tw-passagedata><tw-passagedata pid="63" name="Day 2 2" tags="" position="1100,1250" size="100,100">&quot;Maybe they&#39;ll let us see more of the ship if we ask nicely. We&#39;re still kids, after all. They won&#39;t worry about us being in the crew areas. Maybe they&#39;ll worry about us breaking something, sure, but that&#39;d be their fault for letting us in.&quot; She smiles.
 
 You spend the rest of the day wandering around the ship and speaking with other kids you see aboard the ship before you get cold and run back to your sleeping quarters. When you get back you see your mother sleeping. She looks very pale. You decide to let her rest and also go to sleep.
 
-[[Day 3|On the boat]]</tw-passagedata><tw-passagedata pid="64" name="Day 5 2" tags="" position="1000,1700" size="100,100">As you walk into your communal sleeping area, a kid about your age runs up to you and asks about your clothing.
+[[Day 3|On the boat]]</tw-passagedata><tw-passagedata pid="64" name="Day 5 2" tags="" position="1000,1900" size="100,100">As you walk into your communal sleeping area, a kid about your age runs up to you and asks about your clothing.
 
 At least, you think they are. &quot;Hey! You [incomprehensible] that [incomprehensible]. [incomprehensible] William. [incomprehensible]?&quot; It&#39;s definitely English, but you don&#39;t know nearly enough to understand what he&#39;s saying. All you do know is that he&#39;s pointing at you with an interested look on his face.
 
