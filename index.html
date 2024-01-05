@@ -102,14 +102,8 @@ var LZString={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234
 	display: none;
 }
 @font-face {
-    font-family: Nimbus;
-    src: url("fonts/NimbusSanL-Reg.otf") format("opentype");
-}
-
-@font-face {
-    font-family: Nimbus;
-    font-weight: bold;
-    src: url("fonts/NimbusSanL-Bol.otf") format("opentype");
+    font-family: "Nimbus";
+    src: url(fonts/NimbusSanL-Reg.otf);
 }
 
 h1 {
@@ -132,7 +126,7 @@ h3 {
 }
 
 body {
-	font-family: Nimbus, Helvetica Now Display, Helvetica, Arial, sans-serif;
+	font-family: "Nimbus", Helvetica Now Display, Helvetica, Arial, sans-serif;
     margin-left: -3.5em;
     margin-top: -25px;
 }
@@ -153,7 +147,7 @@ body {
 </script><tw-passagedata pid="1" name="It&#39;s time to pack" tags="" position="1400,350" size="100,100">&lt;&lt;cacheaudio &quot;pack&quot; &quot;sounds/pack.mp3&quot;&gt;&gt;&#39;&#39;&lt;&lt;link &quot;Read Aloud&quot;&gt;&gt;&lt;&lt;audio &quot;pack&quot; play&gt;&gt;&lt;&lt;/link&gt;&gt;&#39;&#39;
 You&#39;re helping your grandmother entertain Demetra for about an hour when your mother calls you over to your bedroom.
 
-&quot;Me and Anna packed the bare essentials already,&quot; your mother explains. &quot;Bring whatever keepsakes you can carry. If we ever do come back to Greece, it won&#39;t be for a long time.&quot;
+&quot;Anna and I packed the bare essentials already,&quot; your mother explains. &quot;Bring whatever keepsakes you can carry. If we ever do come back to Greece, it won&#39;t be for a long time.&quot;
 
 &lt;&lt;link [[Next|Packing 2]]&gt;&gt;&lt;&lt;audio &quot;pack&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="2" name="On the boat" tags="" position="1100,1200" size="100,100">&#39;&#39;November 19, 1925.&#39;&#39; 
 //&quot;Nikos! Nikos, Wake up!&quot;//
@@ -397,7 +391,7 @@ You wake up the next morning to the violent sounds of the ship sailing through a
 [[3 days later|Day 7]]</tw-passagedata><tw-passagedata pid="29" name="Intro" tags="" position="475,325" size="100,100">&lt;&lt;cacheaudio &quot;intro&quot; &quot;sounds/intro.mp3&quot;&gt;&gt;&#39;&#39;&lt;&lt;link &quot;Read Aloud&quot;&gt;&gt;&lt;&lt;audio &quot;intro&quot; play&gt;&gt;&lt;&lt;/link&gt;&gt;&#39;&#39;
 &#39;&#39;November 17, 1925.&#39;&#39; 
 
-Your name is &lt;&lt;link [[Nikos|Bemus]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;. You&#39;re a young boy living in Greece. Today, you&#39;re playing around with your &lt;&lt;link [[younger sister]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt; alongside your &lt;&lt;link [[grandmother]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;. Your &lt;&lt;link [[mother]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt; and &lt;&lt;link [[older sister]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt; are out grabbing the mail from the post office. 
+Your name is &lt;&lt;link [[Nikos|Bemus]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;. You&#39;re a young boy living in Athens, Greece. Today, you&#39;re playing around with your &lt;&lt;link [[younger sister]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt; alongside your &lt;&lt;link [[grandmother]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;. Your &lt;&lt;link [[mother]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt; and &lt;&lt;link [[older sister]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt; are out grabbing the mail from the post office. 
 &lt;img src=&quot;images/house.png&quot; width=&quot;306px&quot; height=&quot;194px&quot;/&gt;
 
 &lt;&lt;link [[Next|Beginning]]&gt;&gt;&lt;&lt;audio &quot;intro&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;
@@ -416,14 +410,7 @@ You&#39;ve brought all you can carry. You take one last look at your bedroom and
 //I&#39;ll never see this city again...//
 
 &lt;&lt;link [[Next|Leave 2]]&gt;&gt;&lt;&lt;audio &quot;post&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;
-</tw-passagedata><tw-passagedata pid="31" name="Features for next version" tags="" position="1400,800" size="100,100">HAVE AUDIO STOP ON THE NEXT PAGE INSTEAD OF ON EVERY LINK
-
-
-
-text to speech
-
-later: add some more places where picking an item changes the flavor text
-
+</tw-passagedata><tw-passagedata pid="31" name="Features for next version" tags="" position="1400,800" size="100,100">
 Most important:
 figure out final hosting site
 Music
@@ -431,14 +418,19 @@ Music
 
 Also, maybe when they come to America you can switch to American songs. Here’s the top song in the US from 1925: https://playback.fm/charts/top-100-songs/video/1925/Ben-Bernie-Sweet-Georgia-Brown.
 
+Text to speech - let’s just have an icon that denotes “if you want to listen, turn on ___ setting on your phone.” This eliminates what seems like a lot of extra work.
 
 
-Secondary priority:
-plugins
+Narrative
+Wallet ending - more concise: something like “you work in the shop, you volunteer at the church” 
+Tone down mom death narrative 
 
-Third priority: 
-Text to speech 
--as we discussed, is there a way to have an audio version of the text
+Music/Sound - 
+Can the only the intro/exposition have the greek music, and then music when they get to chicago - perhaps 1920s music 
+We didn’t discuss this, but I am curious if we have time to add sound effects to the bad news slides? It could add a little enthusiasm to any text heavy causal and effect moments. 
+Curious if then the options would just read - Audio Version 
+add some more places where picking an item changes the flavor text
+
 
 
 
@@ -584,13 +576,12 @@ Soap and a toothbrush. You&#39;re going to be on this boat for a while. Keeping 
 
 &lt;&lt;if $weight lt $size &amp;&amp; $kit eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;set $kit to true&gt;&gt;&lt;&lt;audio &quot;kit&quot; stop&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-&lt;&lt;link [[Leave it behind|items]]&gt;&gt;&lt;&lt;audio &quot;kit&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="Icon Details" tags="" position="2050,200" size="100,100">&lt;&lt;cacheaudio &quot;icon&quot; &quot;sounds/icon.mp3&quot;&gt;&gt;&#39;&#39;&lt;&lt;link &quot;Read Aloud&quot;&gt;&gt;&lt;&lt;audio &quot;icon&quot; play&gt;&gt;&lt;&lt;/link&gt;&gt;&#39;&#39;
-&lt;img src=&quot;images/icon.png&quot; width=&quot;310px&quot; height=&quot;377px&quot; /&gt;
+&lt;&lt;link [[Leave it behind|items]]&gt;&gt;&lt;&lt;audio &quot;kit&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="48" name="Icon Details" tags="" position="2050,200" size="100,100">&lt;img src=&quot;images/icon.png&quot; width=&quot;310px&quot; height=&quot;377px&quot; /&gt;
 As devout followers of the Church, your parents always made you carry a small icon on you. You ask yourself what kind of God would force you to abandon your life like this.
 
 &lt;&lt;if $weight lt $size &amp;&amp; $bible eq false&gt;&gt;&lt;&lt;link [[Take it with you|items]]&gt;&gt;&lt;&lt;audio &quot;icon&quot; stop&gt;&gt;&lt;&lt;set $bible to true&gt;&gt;&lt;&lt;set $weight to $weight + 1&gt;&gt;&lt;&lt;/link&gt;&gt;&lt;&lt;elseif $weight eq $size&gt;&gt;You have no more space.&lt;&lt;else&gt;&gt;Already taken.&lt;&lt;endif&gt;&gt;
 
-&lt;&lt;link [[Leave it behind|items]]&gt;&gt;&lt;&lt;audio &quot;icon&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="49" name="Jewelry Details" tags="" position="2150,200" size="100,100">&lt;&lt;cacheaudio &quot;jewel&quot; &quot;sounds/jewel.mp3&quot;&gt;&gt;&#39;&#39;&lt;&lt;link &quot;Read Aloud&quot;&gt;&gt;&lt;&lt;audio &quot;jewel&quot; play&gt;&gt;&lt;&lt;/link&gt;&gt;&#39;&#39;
+[[Leave it behind|items]]</tw-passagedata><tw-passagedata pid="49" name="Jewelry Details" tags="" position="2150,200" size="100,100">&lt;&lt;cacheaudio &quot;jewel&quot; &quot;sounds/jewel.mp3&quot;&gt;&gt;&#39;&#39;&lt;&lt;link &quot;Read Aloud&quot;&gt;&gt;&lt;&lt;audio &quot;jewel&quot; play&gt;&gt;&lt;&lt;/link&gt;&gt;&#39;&#39;
 &lt;img src=&quot;images/jewelry.png&quot; width=&quot;307px&quot; height=&quot;204px&quot;/&gt;
 A longtime family heirloom, passed down to you. It’s not much, but it’s valuable enough that you could probably pawn it off to make some quick cash.
 
@@ -657,12 +648,12 @@ You slide the letter out from its envelope. Three tickets and a picture of your 
 &lt;img src=&quot;images/dad.png&quot; width=&quot;361px&quot; height=&quot;230px&quot;  /&gt;
 
 &lt;&lt;link [[Read the letter|Letter]]&gt;&gt;&lt;&lt;audio &quot;beginning2&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="57" name="Prelude 2" tags="" position="1250,350" size="100,100">&lt;&lt;cacheaudio &quot;prelude2&quot; &quot;sounds/prelude2.mp3&quot;&gt;&gt;&#39;&#39;&lt;&lt;link &quot;Read Aloud&quot;&gt;&gt;&lt;&lt;audio &quot;prelude2&quot; play&gt;&gt;&lt;&lt;/link&gt;&gt;&#39;&#39;
-You&#39;re not entirely sure how to feel about the news. You feel a mixture of fear and excitement.  You&#39;ll have to leave today. Your life as you know it is now over. You&#39;ll have to completely uproot yourself, start over in a new country. Who knows if you will ever see your grandmother or Lanthe again. But maybe life in America won&#39;t be so bad. At least you&#39;ll get the chance to see your dad. 
+You&#39;re not entirely sure how to feel about the news. You feel a mixture of fear and excitement.  You&#39;ll have to leave today. Your life as you know it is now over. You&#39;ll have to completely uproot yourself, start over in a new country. Who knows if you will ever see your grandmother or Demetra again. But maybe life in America won&#39;t be so bad. At least you&#39;ll get the chance to see your dad. 
 
 You can hear your mother walking back into the kitchen. &quot;Spend some time with Grandma and Demetra,&quot; she says. &quot;I&#39;ll start packing.&quot;
 	
 &lt;&lt;link [[Later...|It&#39;s time to pack]]&gt;&gt;&lt;&lt;audio &quot;prelude2&quot; stop&gt;&gt;&lt;&lt;/link&gt;&gt;</tw-passagedata><tw-passagedata pid="58" name="Packing 2" tags="" position="1550,350" size="100,100">&lt;&lt;cacheaudio &quot;pack2&quot; &quot;sounds/pack2.mp3&quot;&gt;&gt;&#39;&#39;&lt;&lt;link &quot;Read Aloud&quot;&gt;&gt;&lt;&lt;audio &quot;pack2&quot; play&gt;&gt;&lt;&lt;/link&gt;&gt;&#39;&#39;
-First, you need to choose the size of your luggage. You can choose between a knapsack which carries 3 items, a suitcase which carries 5 or a chest which carries 8.
+First, you need to choose the size of your luggage. You can choose between a knapsack which carries 3 items, a suitcase which carries 5 items, or a chest which carries 8 items.
 
 &quot;You might not want to bring too much with you, Nikos,&quot; your mother tells you. &quot;They might not allow large luggage on board, and there&#39;s no way to tell until we get there.&quot;
 
